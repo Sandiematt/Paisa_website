@@ -48,9 +48,12 @@ export const viewport: Viewport = {
 
 /**
  * Sets the desktop stage scale before first paint so the 1440×900 Wonder frames
- * never render at the wrong size, and marks the splash as active.
+ * never render at the wrong size, and marks the splash as active. The height is
+ * the small viewport (100svh): innerHeight at load, then a probe on resize, as
+ * innerHeight changes while a touch browser's toolbar collapses and would
+ * rescale the stage mid-scroll.
  */
-const bootScript = `(function(){var d=document.documentElement;function s(){d.style.setProperty('--stage-scale',String(Math.min(innerWidth/1440,innerHeight/900,1.35)))}s();addEventListener('resize',s,{passive:true});d.classList.add('splash-active');})();`;
+const bootScript = `(function(){var d=document.documentElement,p,w=-1,h=-1;function vh(){var b=document.body;if(!b)return innerHeight;if(!p){p=document.createElement('div');p.setAttribute('aria-hidden','true');p.style.cssText='position:fixed;top:0;left:0;width:0;height:100svh;visibility:hidden;pointer-events:none';b.appendChild(p)}return p.offsetHeight||innerHeight}function s(){var nw=innerWidth,nh=vh();if(nw===w&&nh===h)return;w=nw;h=nh;d.style.setProperty('--stage-scale',String(Math.min(nw/1440,nh/900,1.35)))}s();addEventListener('resize',s,{passive:true});d.classList.add('splash-active');})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

@@ -291,7 +291,8 @@ function DesktopScene() {
         </div>
       </Stage>
 
-      <motion.div className="absolute inset-x-0 bottom-0 z-10" style={{ opacity: footerOpacity }}>
+      {/* Pinned to the small viewport's bottom so a touch toolbar never covers it. */}
+      <motion.div className="absolute inset-x-0 top-[calc(100svh-72px)] z-10" style={{ opacity: footerOpacity }}>
         <FooterRow className="flex h-[72px] items-center justify-between px-[clamp(24px,8.33vw,120px)]" />
       </motion.div>
     </>

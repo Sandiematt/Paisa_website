@@ -1,20 +1,20 @@
-import { useId } from "react";
+/**
+ * One 240px tile of the film grain (feTurbulence, desaturated). Stitched tiles
+ * repeat seamlessly, and as a background image it is rasterised once and
+ * reused, instead of a full-viewport SVG filter re-rendered for every section.
+ */
+const GRAIN_TILE = `url("data:image/svg+xml,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>',
+)}")`;
 
-/** Film grain over the whole viewport (Wonder: feTurbulence at 7% opacity). */
-export function Grain({ opacity = 0.07 }: { opacity?: number }) {
-  const id = useId().replace(/:/g, "");
+/** Film grain over the whole layer (Wonder: feTurbulence at 7% opacity). */
+export function Grain({ opacity = 0.07, className = "" }: { opacity?: number; className?: string }) {
   return (
-    <svg
+    <div
       aria-hidden
-      className="pointer-events-none absolute inset-0 h-full w-full"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter id={`grain-${id}`}>
-        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves={2} stitchTiles="stitch" />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-      <rect width="100%" height="100%" filter={`url(#grain-${id})`} opacity={opacity} />
-    </svg>
+      className={`pointer-events-none absolute inset-0 ${className}`}
+      style={{ backgroundImage: GRAIN_TILE, backgroundSize: "240px 240px", opacity }}
+    />
   );
 }
 

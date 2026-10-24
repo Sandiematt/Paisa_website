@@ -254,7 +254,8 @@ function AiCardBody() {
 
 function MobileInsights(): ReactNode {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-void to-charcoal px-6 py-20">
+    // Opens up to charcoal and returns to void, like the desktop scene, so the neighbours join cleanly.
+    <div className="relative overflow-hidden bg-gradient-to-b from-void via-charcoal to-void px-6 py-20">
       <div
         aria-hidden
         className="absolute left-1/2 top-[40%] size-[420px] -translate-x-1/2 rounded-full bg-haze blur-[110px]"

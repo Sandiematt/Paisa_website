@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { motion, useMotionValueEvent, useTransform } from "motion/react";
 
+import { Grain } from "@/components/story/Atmosphere";
 import { StoryScene, useSceneProgress } from "@/components/story/StoryScene";
 import { Stage } from "@/components/story/Stage";
 import { PhoneFrame, ScreenCrop } from "@/components/story/PhoneFrame";
@@ -28,6 +29,7 @@ export function SceneHabits() {
       navTheme="light"
       length={3}
       rest={0.76}
+      dissolve={0.04}
       className="bg-void"
       mobile={<MobileHabits />}
     >
@@ -78,6 +80,8 @@ function DesktopHabits() {
 
   return (
     <>
+      {/* Same grain as the dark scenes around it; the paper covers it. */}
+      <Grain />
       <motion.div aria-hidden className="absolute inset-0 bg-paper" style={{ clipPath: paperClip }} />
       <Stage>
         {/* Morning light */}

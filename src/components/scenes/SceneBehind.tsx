@@ -164,7 +164,8 @@ function BuildStep({ index, last }: { index: number; last: boolean }) {
 function DesktopScene() {
   const { progress } = useSceneProgress();
 
-  const fade = useTransform(progress, [0, 0.15, 0.92, 1], [0, 1, 1, 0.4]);
+  // Fades fully out: the next scene dissolves in over this one's last frame.
+  const fade = useTransform(progress, [0, 0.15, 0.88, 1], [0, 1, 1, 0]);
   const narrativeY = useTransform(progress, [0, 1], [18, -14]);
   const editorY = useTransform(progress, [0, 1], [28, -28]);
   const sketchY = useTransform(progress, [0, 1], [64, -64]);
@@ -276,8 +277,13 @@ function DesktopScene() {
 /* -------------------------------------------------------------------------- */
 function MobileScene() {
   return (
-    <div className="relative overflow-hidden bg-charcoal px-6 py-20">
-      <div aria-hidden className="absolute inset-0" style={GRID_STYLE} />
+    // Charcoal with soft void edges, so the block joins the dark scenes around it.
+    <div className="relative overflow-hidden bg-[linear-gradient(to_bottom,var(--color-void),var(--color-charcoal)_96px,var(--color-charcoal)_calc(100%-96px),var(--color-void))] px-6 py-20">
+      <div
+        aria-hidden
+        className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_96px,black_calc(100%-96px),transparent)]"
+        style={GRID_STYLE}
+      />
       <div
         aria-hidden
         className="absolute left-[30%] top-[-120px] size-[420px] rounded-full bg-haze-faint blur-[100px]"

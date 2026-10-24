@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 /*
+ * Pinned cinematic layout: wide *and* landscape-ish viewports. Portrait tablets
+ * use the natural-scroll layout. Mirrors CINEMA_QUERY in StoryScene.tsx.
+ */
+@custom-variant cinema {
+  @media (min-width: 48rem) and (min-aspect-ratio: 1/1) {
+    @slot;
+  }
+}
+
+/*
  * Film tokens, mirrored 1:1 from the Wonder "Website" page (film/* tokens).
  * Use them as Tailwind colours: bg-void, text-warm-white, border-hairline, …
  */
@@ -46,7 +56,22 @@
 :root {
   /* Overwritten before paint by the inline script in layout.tsx. */
   --stage-scale: 1;
+  /* Scroll over which a pinned scene dissolves in. Mirrors DISSOLVE in StoryScene.tsx. */
+  --scene-dissolve: 30lvh;
   color-scheme: dark;
+}
+
+/*
+ * Pinned scenes hand off without a scroll-through: each one is pulled up by a
+ * viewport plus the dissolve, so it starts exactly where the previous scene
+ * reaches its last frame (see StoryScene). Anchors land once the dissolve has
+ * finished.
+ */
+@media (min-width: 48rem) and (min-aspect-ratio: 1/1) and (prefers-reduced-motion: no-preference) {
+  .story-scene + .story-scene {
+    margin-top: calc(-100lvh - var(--scene-dissolve));
+    scroll-margin-top: calc(-1 * var(--scene-dissolve));
+  }
 }
 
 html {

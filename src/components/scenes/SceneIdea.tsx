@@ -215,10 +215,11 @@ function IdeaDesktop() {
 function IdeaMobile() {
   return (
     <div className="relative overflow-hidden bg-void px-6 py-28">
-      <Grain />
+      {/* Grain and glow fall off before the bottom edge so the plain void below joins without a seam. */}
+      <Grain className="[mask-image:linear-gradient(to_bottom,black_70%,transparent)]" />
       <div
         aria-hidden
-        className="absolute -left-10 bottom-0 h-[420px] w-[470px] rounded-full bg-haze blur-[100px]"
+        className="absolute -left-10 bottom-[160px] h-[420px] w-[470px] rounded-full bg-haze blur-[100px]"
       />
       <div className="relative flex flex-col items-center gap-24">
         <div className="flex flex-col items-center gap-6 text-center">

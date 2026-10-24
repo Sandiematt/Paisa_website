@@ -37,16 +37,24 @@ export function StoryNav() {
     const attributes = new MutationObserver((records) => read(records[0].target as HTMLElement));
 
     const sections = Array.from(document.querySelectorAll<HTMLElement>("section[data-chapter]"));
-    // The active scene is the one under the nav bar: a thin band at the top of the viewport.
+    // The active scene is the one under the nav bar: a thin band at the top of
+    // the viewport. Pinned scenes overlap while one dissolves into the next, so
+    // two can share the band; the later one is on top.
+    const under = new Set<HTMLElement>();
+    let active: HTMLElement | undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
           const el = entry.target as HTMLElement;
-          read(el);
-          attributes.disconnect();
-          attributes.observe(el, { attributes: true, attributeFilter: ["data-nav-theme", "data-nav-brand"] });
+          if (entry.isIntersecting) under.add(el);
+          else under.delete(el);
         }
+        const top = sections.findLast((s) => under.has(s));
+        if (!top || top === active) return;
+        active = top;
+        read(top);
+        attributes.disconnect();
+        attributes.observe(top, { attributes: true, attributeFilter: ["data-nav-theme", "data-nav-brand"] });
       },
       { rootMargin: "0px 0px -96% 0px" },
     );
@@ -72,10 +80,10 @@ export function StoryNav() {
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
-      {/* Mobile scenes scroll under the bar (desktop scenes are pinned with room for it). */}
+      {/* Natural-scroll scenes scroll under the bar (pinned scenes are composed with room for it). */}
       <div
         aria-hidden
-        className={`absolute inset-x-0 top-0 h-24 backdrop-blur-md transition-colors duration-500 [mask-image:linear-gradient(to_bottom,black_55%,transparent)] md:hidden ${
+        className={`absolute inset-x-0 top-0 h-24 backdrop-blur-md transition-colors duration-500 [mask-image:linear-gradient(to_bottom,black_55%,transparent)] cinema:hidden ${
           light ? "bg-paper/85" : "bg-void/80"
         }`}
       />
