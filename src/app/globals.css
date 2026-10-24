@@ -120,6 +120,15 @@ html.splash-active body {
   }
 }
 
+/*
+ * A Paisa logo the flying bird has not landed in yet (FlightBird sets this; with
+ * reduced motion it never does, so every logo shows as usual). Opacity only, so
+ * nothing shifts or reflows.
+ */
+[data-bird-perch][data-perch="waiting"] {
+  opacity: 0;
+}
+
 .sr-only-focusable:not(:focus):not(:focus-within) {
   position: absolute;
   width: 1px;

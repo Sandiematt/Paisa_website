@@ -100,7 +100,7 @@ export function StoryNav() {
             pointerEvents: state.brand === "hidden" ? "none" : "auto",
           }}
         >
-          <Image src={logoMark.src} alt="" width={28} height={28} className="h-7 w-7" priority />
+          <Image src={logoMark.src} alt="" width={28} height={28} className="h-7 w-7" priority data-bird-origin="" />
           <span
             className={`text-[17px] font-semibold tracking-[-0.3px] transition-colors duration-500 ${
               state.brand === "full" ? strong : muted

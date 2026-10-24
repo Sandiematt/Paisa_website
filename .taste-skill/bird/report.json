@@ -1,0 +1,2694 @@
+{
+ "url": "http://localhost:3211",
+ "at": "2026-10-24T20:14:50.111Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    1,
+    0.18,
+    0.16,
+    0.39,
+    0.5,
+    0.26,
+    0.37,
+    0.45,
+    0.4,
+    0.45,
+    0.41,
+    0.51
+   ],
+   "motion": {
+    "elements": 135,
+    "css": 1,
+    "transitions": 1,
+    "scripted": 133,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 18810,
+     "screens": 20.9,
+     "words": 642,
+     "img": 15,
+     "video": 0,
+     "canvas": 0,
+     "svg": 27,
+     "sections": 10,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 10,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fbrand%2Fpaisa-mark.png&w=256&q=75",
+      "image?url=%2Fbrand%2Fpaisa-mark.png&w=256&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "₹",
+     "words": 1,
+     "chars": 1,
+     "lines": 1,
+     "size": 120,
+     "vw": 8.3,
+     "font": "Instrument Serif",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.5,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.03,
+     "top": 190,
+     "tag": "span",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "What if managing money… just made sense? What if managing money… just made sense?",
+     "words": 14,
+     "lines": 3,
+     "size": 16,
+     "font": "Plus Jakarta Sans"
+    },
+    "headings": [
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 120,
+      "vw": 8.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 190,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "What if managing money… just made sense? What if managing money… just made sense?",
+      "words": 14,
+      "chars": 81,
+      "lines": 2,
+      "size": 92,
+      "vw": 6.4,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.016,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 360,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 660,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 110,
+      "vw": 7.6,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 1174,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 120,
+      "vw": 8.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 1230,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "31",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 760,
+      "vw": 52.8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.039,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 1340,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "And somehow… the month is over.",
+      "words": 6,
+      "chars": 31,
+      "lines": 2,
+      "size": 84,
+      "vw": 5.8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.018,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 1490,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "A little here.",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.016,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.27,
+      "top": 1500,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "A little there.",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.016,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.28,
+      "top": 1500,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 1700,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 90,
+      "vw": 6.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 1813,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "One day, I asked myself…",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.18,
+      "top": 4030,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "What if there was a smarter way to manage money? What if there was a smarter way to manage money?",
+      "words": 20,
+      "chars": 97,
+      "lines": 2,
+      "size": 80,
+      "vw": 5.6,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.019,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 4111,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Paisa. P a i s a .",
+      "words": 7,
+      "chars": 18,
+      "lines": 1,
+      "size": 128,
+      "vw": 8.9,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.039,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.24,
+      "top": 4340,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Your money. Your clarity.",
+      "words": 4,
+      "chars": 25,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.23,
+      "top": 4500,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "An idea became a product. An idea became a product.",
+      "words": 10,
+      "chars": 51,
+      "lines": 2,
+      "size": 72,
+      "vw": 5,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.021,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 6398,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 520,
+      "vw": 36.1,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.15,
+      "top": 7820,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Every rupee has a story.",
+      "words": 5,
+      "chars": 24,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.019,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 8144,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 360,
+      "vw": 25,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.1,
+      "top": 8490,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "What if tracking your spending required less effort? What if tracking your spending required less effort?",
+      "words": 16,
+      "chars": 105,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.018,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 10258,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹486",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 10667,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Tracking is only the beginning. Tracking is only the beginning.",
+      "words": 10,
+      "chars": 63,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.018,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 12496,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Make room for what matters. Make room for what matters.",
+      "words": 10,
+      "chars": 55,
+      "lines": 2,
+      "size": 72,
+      "vw": 5,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.021,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.35,
+      "top": 14850,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "81% used",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.021,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.14,
+      "top": 14874,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "I didn’t set out to build an app. I set out to understand my money.",
+      "words": 15,
+      "chars": 67,
+      "lines": 3,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.018,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 16588,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Paisa",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.036,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 17126,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Your money has a story. Make it one you understand.",
+      "words": 10,
+      "chars": 51,
+      "lines": 3,
+      "size": 80,
+      "vw": 5.6,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.022,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 17186,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 27,
+     "maxLines": 3,
+     "over2Lines": 2,
+     "statements": 4,
+     "centered": 1,
+     "medianWords": 4,
+     "mixedFontHeadings": 10
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Plus Jakarta Sans",
+       "share": 0.85,
+       "mono": false
+      },
+      {
+       "family": "Instrument Serif",
+       "share": 0.14,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.01,
+       "mono": true
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      28,
+      30,
+      36,
+      40,
+      56,
+      64,
+      72,
+      80,
+      84,
+      90,
+      92,
+      96,
+      110,
+      120,
+      128,
+      360,
+      520,
+      760
+     ],
+     "sizeCount": 29,
+     "notLoaded": [],
+     "body": {
+      "font": "Plus Jakarta Sans",
+      "size": 17,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 61,
+     "max": {
+      "size": 760,
+      "vw": 52.8,
+      "font": "Instrument Serif",
+      "text": "31"
+     },
+     "monoShare": 0.01,
+     "monoProseShare": 0.01,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "DuplicateCheck.kt",
+      "home · early sketch"
+     ],
+     "microLabels": 13,
+     "microLabelShare": 0.055,
+     "microSamples": [
+      "Scroll to begin",
+      "From idea to reality",
+      "Chapter one",
+      "Chapter two",
+      "Supported UPI app",
+      "Chapter three"
+     ],
+     "upperShare": 0.06,
+     "centerShare": 0.01,
+     "smallText": 17
+    },
+    "eyebrows": [],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 12,
+      "top": 32
+     }
+    ],
+    "color": {
+     "bodyBg": "#07060b",
+     "bodyBgHsl": {
+      "h": 252,
+      "s": 0.29,
+      "l": 0.03
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#07060b",
+       "top": 0,
+       "hsl": {
+        "h": 252,
+        "s": 0.29,
+        "l": 0.03
+       }
+      },
+      {
+       "color": "#fbf9f5",
+       "top": 14580,
+       "hsl": {
+        "h": 40,
+        "s": 0.43,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#efeaff",
+       "top": 14380,
+       "hsl": {
+        "h": 254,
+        "s": 1,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#121019",
+       "top": 16380,
+       "hsl": {
+        "h": 253,
+        "s": 0.22,
+        "l": 0.08
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#9c97a8",
+       "share": 0.57
+      },
+      {
+       "color": "#f5f1ea",
+       "share": 0.27
+      },
+      {
+       "color": "#58536a",
+       "share": 0.04
+      },
+      {
+       "color": "#b9a7ff",
+       "share": 0.03
+      },
+      {
+       "color": "#5e596b",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#6d4aff",
+      "hsl": {
+       "h": 252,
+       "s": 1,
+       "l": 0.65
+      },
+      "fg": "#f5f1ea"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 1,
+     "radius": "pill",
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 1,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to the product"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 15,
+     "shadowOverlay": 8,
+     "shadowSamples": [
+      "div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.absolute.left-3 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 1,
+     "scrims": 2,
+     "gradientSamples": [
+      "div.absolute.inset-0 → linear-gradient(in oklab, rgb(7, 6, 11) 0%, rgb(18, 16, 25) 100%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "div.flex.h-10 559px",
+      "footer.border-t.border-hairline 1440px"
+     ],
+     "outlinedBoxes": 13,
+     "dashed": 2,
+     "blurred": 0,
+     "roundedBoxes": 42,
+     "boxRadius": 99,
+     "squareMedia": 14,
+     "roundedMedia": 7,
+     "mediaRadius": 44,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "svg",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "plus jakarta sans",
+     "plus jakarta sans fallback",
+     "instrument serif",
+     "instrument serif fallback",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 18810,
+    "margins": {
+     "left": 238,
+     "right": 238
+    },
+    "sections": [
+     {
+      "sel": "section#question.story-scene.relative",
+      "tag": "section",
+      "top": 0,
+      "height": 2250,
+      "words": 10,
+      "media": 2,
+      "middle": 22,
+      "heading": {
+       "text": "What",
+       "size": 92,
+       "tag": "h1"
+      },
+      "left": 238,
+      "right": 238,
+      "textLeft": 238,
+      "textRight": 238,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#problem.story-scene.relative",
+      "tag": "section",
+      "top": 1080,
+      "height": 3870,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#idea.story-scene.relative",
+      "tag": "section",
+      "top": 3780,
+      "height": 3420,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#product.story-scene.relative",
+      "tag": "section",
+      "top": 6030,
+      "height": 2970,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#know-your-money.story-scene.relative",
+      "tag": "section",
+      "top": 7830,
+      "height": 3420,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#smarter-tracking.story-scene.relative",
+      "tag": "section",
+      "top": 10080,
+      "height": 3420,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#insights.story-scene.relative",
+      "tag": "section",
+      "top": 12330,
+      "height": 3420,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#better-habits.story-scene.relative",
+      "tag": "section",
+      "top": 14580,
+      "height": 2970,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#behind-the-idea.story-scene.relative",
+      "tag": "section",
+      "top": 16380,
+      "height": 1710,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#story-continues.story-scene.relative",
+      "tag": "section",
+      "top": 16920,
+      "height": 1890,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "What if managing money… just made sense? What if managing money… just made sense",
+      "size": 16,
+      "top": 360,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 238,
+      "n": 1
+     },
+     {
+      "x": 417,
+      "n": 1
+     },
+     {
+      "x": 483,
+      "n": 1
+     },
+     {
+      "x": 522,
+      "n": 1
+     },
+     {
+      "x": 726,
+      "n": 1
+     },
+     {
+      "x": 811,
+      "n": 1
+     },
+     {
+      "x": 1084,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 7,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.99,
+    0.62,
+    0.3,
+    0.5,
+    0.59,
+    0.46,
+    0.88,
+    0.96,
+    0.98,
+    0.96,
+    0.93,
+    0.79
+   ],
+   "motion": {
+    "elements": 67,
+    "css": 13,
+    "transitions": 3,
+    "scripted": 51,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 10912,
+     "screens": 12.9,
+     "words": 584,
+     "img": 10,
+     "video": 0,
+     "canvas": 0,
+     "svg": 24,
+     "sections": 10,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fapp%2Fhome.png&w=256&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Finsights.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=384&q=75",
+      "image?url=%2Fapp%2Fprofile.png&w=384&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=640&q=75",
+      "image?url=%2Fapp%2Fhome.png&w=256&q=75"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "What if managing money… just made sense? What if managing money… just made sense?",
+     "words": 14,
+     "chars": 81,
+     "lines": 3,
+     "size": 50,
+     "vw": 12.8,
+     "font": "Instrument Serif",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.88,
+     "top": 335,
+     "mixedFonts": [
+      "Instrument Serif",
+      "Instrument Serif italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "What if managing money… just made sense? What if managing money… just made sense?",
+     "words": 14,
+     "lines": 4,
+     "size": 16,
+     "font": "Plus Jakarta Sans"
+    },
+    "headings": [
+     {
+      "text": "What if managing money… just made sense? What if managing money… just made sense?",
+      "words": 14,
+      "chars": 81,
+      "lines": 3,
+      "size": 50,
+      "vw": 12.8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 335,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A little here.",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 52,
+      "vw": 13.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.019,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 940,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "31",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 360,
+      "vw": 92.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.039,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 1102,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "A little there.",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 52,
+      "vw": 13.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.019,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1185,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "And somehow… the month is over.",
+      "words": 6,
+      "chars": 31,
+      "lines": 2,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.021,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1527,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "One day, I asked myself…",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.54,
+      "top": 1832,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "What if there was a smarter way to manage money?",
+      "words": 10,
+      "chars": 48,
+      "lines": 3,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.023,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1892,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Paisa.",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 56,
+      "vw": 14.4,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.043,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.38,
+      "top": 2209,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Your money. Your clarity.",
+      "words": 4,
+      "chars": 25,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.52,
+      "top": 2275,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "An idea became a product.",
+      "words": 5,
+      "chars": 25,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 3018,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 260,
+      "vw": 66.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.28,
+      "top": 3174,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Every rupee has a story.",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.023,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 3326,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What if tracking your spending required less effort?",
+      "words": 8,
+      "chars": 52,
+      "lines": 3,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 4611,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹486",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.64,
+      "top": 4872,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Tracking is only the beginning.",
+      "words": 5,
+      "chars": 31,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 5481,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Make room for what matters.",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.021,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7179,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "81% used",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.021,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.78,
+      "top": 8074,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "I didn’t set out to build an app. I set out to understand my money.",
+      "words": 15,
+      "chars": 67,
+      "lines": 3,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.013,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 8537,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Paisa",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "tracking": -0.036,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 10091,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Your money has a story. Make it one you understand.",
+      "words": 10,
+      "chars": 51,
+      "lines": 3,
+      "size": 42,
+      "vw": 10.8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 10147,
+      "mixedFonts": [
+       "Instrument Serif",
+       "Instrument Serif italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 20,
+     "maxLines": 3,
+     "over2Lines": 5,
+     "statements": 4,
+     "centered": 2,
+     "medianWords": 5,
+     "mixedFontHeadings": 10
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Plus Jakarta Sans",
+       "share": 0.8,
+       "mono": false
+      },
+      {
+       "family": "Instrument Serif",
+       "share": 0.14,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.06,
+       "mono": true
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      22,
+      24,
+      26,
+      28,
+      30,
+      36,
+      38,
+      42,
+      44,
+      48,
+      50,
+      52,
+      56,
+      260,
+      360
+     ],
+     "sizeCount": 22,
+     "notLoaded": [],
+     "body": {
+      "font": "Plus Jakarta Sans",
+      "size": 16,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.1
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 360,
+      "vw": 92.3,
+      "font": "Instrument Serif",
+      "text": "31"
+     },
+     "monoShare": 0.06,
+     "monoProseShare": 0.01,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "DuplicateCheck.kt",
+      "From the home screen"
+     ],
+     "microLabels": 13,
+     "microLabelShare": 0.055,
+     "microSamples": [
+      "Scroll to begin",
+      "From idea to reality",
+      "Chapter one",
+      "Chapter two",
+      "Supported UPI app",
+      "Chapter three"
+     ],
+     "upperShare": 0.06,
+     "centerShare": 0.02,
+     "smallText": 17
+    },
+    "eyebrows": [
+     {
+      "text": "From idea to reality",
+      "above": "An idea became a product.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 2990
+     },
+     {
+      "text": "Real Paisa screens · sample data",
+      "above": "₹",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3118
+     },
+     {
+      "text": "Chapter two",
+      "above": "What if tracking your spending required ",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 4583
+     },
+     {
+      "text": "Supported UPI app",
+      "above": "₹486",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 4853
+     },
+     {
+      "text": "Chapter three",
+      "above": "Tracking is only the beginning.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 5452
+     },
+     {
+      "text": "Chapter four",
+      "above": "Make room for what matters.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 7147
+     },
+     {
+      "text": "Monthly budget",
+      "above": "81% used",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 8048
+     },
+     {
+      "text": "Behind the idea",
+      "above": "I didn’t set out to build an app. I set ",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 8499
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#07060b",
+     "bodyBgHsl": {
+      "h": 252,
+      "s": 0.29,
+      "l": 0.03
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#07060b",
+       "top": 0,
+       "hsl": {
+        "h": 252,
+        "s": 0.29,
+        "l": 0.03
+       }
+      },
+      {
+       "color": "#121019",
+       "top": 3488,
+       "hsl": {
+        "h": 253,
+        "s": 0.22,
+        "l": 0.08
+       }
+      },
+      {
+       "color": "#0e0e11",
+       "top": 3497,
+       "hsl": {
+        "h": 240,
+        "s": 0.1,
+        "l": 0.06
+       }
+      },
+      {
+       "color": "#1c1926",
+       "top": 6663,
+       "hsl": {
+        "h": 254,
+        "s": 0.21,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#fbf9f5",
+       "top": 7051,
+       "hsl": {
+        "h": 40,
+        "s": 0.43,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#efeaff",
+       "top": 7091,
+       "hsl": {
+        "h": 254,
+        "s": 1,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#15121f",
+       "top": 7417,
+       "hsl": {
+        "h": 254,
+        "s": 0.27,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#9c97a8",
+       "share": 0.51
+      },
+      {
+       "color": "#f5f1ea",
+       "share": 0.32
+      },
+      {
+       "color": "#58536a",
+       "share": 0.04
+      },
+      {
+       "color": "#b9a7ff",
+       "share": 0.04
+      },
+      {
+       "color": "#5e596b",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#6d4aff",
+      "hsl": {
+       "h": 252,
+       "s": 1,
+       "l": 0.65
+      },
+      "fg": "#f5f1ea"
+     },
+     "lowContrast": [
+      {
+       "text": "Real Paisa screens · sample data",
+       "ratio": 3,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#5e596b",
+       "bg": "#07060b"
+      },
+      {
+       "text": "Real Paisa screen · sample data",
+       "ratio": 3,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#5e596b",
+       "bg": "#07060b"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 1,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 1,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to product"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 14,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.bg-charcoal → rgba(0, 0, 0, 0.6) 0px 60px 120px 0px, rgba(255, 255, 255, 0.12) 0px 0px 0px 1.5",
+      "div.bg-charcoal → rgba(0, 0, 0, 0.6) 0px 60px 120px 0px, rgba(255, 255, 255, 0.12) 0px 0px 0px 1.5",
+      "div.absolute.border-2 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 5,
+     "scrims": 2,
+     "gradientSamples": [
+      "div.relative.overflow-hidden → linear-gradient(in oklab, rgb(7, 6, 11) 0%, rgb(18, 16, 25) 50%, rgb(7, 6, 11) 100%)",
+      "div.pointer-events-none.absolute → linear-gradient(in oklab, rgb(7, 6, 11) 0%, rgba(0, 0, 0, 0) 100%)",
+      "div.pointer-events-none.absolute → linear-gradient(to top in oklab, rgb(7, 6, 11) 0%, rgba(0, 0, 0, 0) 100%)",
+      "div.relative.overflow-hidden → linear-gradient(rgb(7, 6, 11), rgb(18, 16, 25) 96px, rgb(18, 16, 25) calc(100% - 96px), rgb(7, 6, 11))"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "div.flex.h-10 340px",
+      "footer.border-t.border-hairline 390px"
+     ],
+     "outlinedBoxes": 7,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 29,
+     "boxRadius": 99,
+     "squareMedia": 5,
+     "roundedMedia": 5,
+     "mediaRadius": 37,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "svg",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "plus jakarta sans",
+     "plus jakarta sans fallback",
+     "instrument serif",
+     "instrument serif fallback",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 10912,
+    "margins": {
+     "left": 24,
+     "right": 26
+    },
+    "sections": [
+     {
+      "sel": "section#question.story-scene.relative",
+      "tag": "section",
+      "top": 0,
+      "height": 844,
+      "words": 10,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "What",
+       "size": 50,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 46,
+      "textLeft": 24,
+      "textRight": 46,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#problem.story-scene.relative",
+      "tag": "section",
+      "top": 844,
+      "height": 876,
+      "words": 35,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "31",
+       "size": 360,
+       "tag": "span"
+      },
+      "left": 24,
+      "right": 0,
+      "textLeft": 24,
+      "textRight": -24,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#idea.story-scene.relative",
+      "tag": "section",
+      "top": 1720,
+      "height": 700,
+      "words": 20,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Paisa.",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#product.story-scene.relative",
+      "tag": "section",
+      "top": 2420,
+      "height": 794,
+      "words": 27,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 24,
+      "right": 54,
+      "textLeft": 24,
+      "textRight": 54,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#know-your-money.story-scene.relative",
+      "tag": "section",
+      "top": 3214,
+      "height": 1288,
+      "words": 53,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Every rupee has",
+       "size": 44,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 31,
+      "textLeft": 24,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#smarter-tracking.story-scene.relative",
+      "tag": "section",
+      "top": 4503,
+      "height": 870,
+      "words": 84,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What if tracking your spending required",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 26,
+      "textLeft": 24,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#insights.story-scene.relative",
+      "tag": "section",
+      "top": 5372,
+      "height": 1679,
+      "words": 80,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Tracking is only",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 39,
+      "textLeft": 24,
+      "textRight": 39,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#better-habits.story-scene.relative",
+      "tag": "section",
+      "top": 7051,
+      "height": 1362,
+      "words": 39,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Make room for",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 39,
+      "textLeft": 24,
+      "textRight": 39,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#behind-the-idea.story-scene.relative",
+      "tag": "section",
+      "top": 8413,
+      "height": 1574,
+      "words": 162,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "I didn’t set out to build",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 25,
+      "textLeft": 24,
+      "textRight": 25,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#story-continues.story-scene.relative",
+      "tag": "section",
+      "top": 9987,
+      "height": 925,
+      "words": 7,
+      "media": 0,
+      "middle": 40,
+      "heading": null,
+      "left": 24,
+      "right": 113,
+      "textLeft": 24,
+      "textRight": 113,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 9888,
+      "height": 972
+     }
+    ],
+    "h1s": [
+     {
+      "text": "What if managing money… just made sense? What if managing money… just made sense",
+      "size": 16,
+      "top": 335,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 23
+     },
+     {
+      "x": 120,
+      "n": 2
+     },
+     {
+      "x": 246,
+      "n": 2
+     },
+     {
+      "x": 45,
+      "n": 1
+     },
+     {
+      "x": 156,
+      "n": 1
+     },
+     {
+      "x": 171,
+      "n": 1
+     },
+     {
+      "x": 188,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 31,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 1440,
+   "message": "2 headline(s) wrap past two lines at 1440px: \"I didn’t set out to build an app. I set out to u\" → 3 lines (15 words, 56px); \"Your money has a story. Make it one you understa\" → 3 lines (10 words, 80px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 36px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "mixed-font-headline",
+   "width": 1440,
+   "message": "10 headline(s) switch typeface or to italic mid-line (the \"one italic serif word\" move).",
+   "fix": "Set the whole headline in one face. Emphasis comes from the words.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: JetBrains Mono — e.g. \"DuplicateCheck.kt\", \"home · early sketch\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "numbering",
+   "width": 1440,
+   "message": "Decorative index numbers: \"01\"",
+   "fix": "Remove them. If order truly matters, write it into the words (\"First, …\") or use a real <ol>."
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "13 tiny uppercase letter-spaced labels (e.g. \"Scroll to begin\", \"From idea to reality\", \"Chapter one\", \"Chapter two\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "width": 1440,
+   "message": "1 gradient fill(s): div.absolute.inset-0 → linear-gradient(in oklab, rgb(7, 6, 11) 0%, rgb(18, 16, 25) 100%)",
+   "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "15 box-shadow(s) on elements at rest: div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.flex.items-start → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "button-fx",
+   "width": 1440,
+   "message": "Buttons with gradient fill.",
+   "fix": "Flat fill, one colour.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "2 thin rule(s)/divider line(s): div.flex.h-10 559px | footer.border-t.border-hairline 1440px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "13 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "dashed",
+   "width": 1440,
+   "message": "2 dashed/dotted border(s).",
+   "fix": "Remove unless it is a real drop zone."
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (section #fbf9f5, text #f5f1ea).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "palette-purple",
+   "width": 1440,
+   "message": "Indigo / violet (button #6d4aff).",
+   "fix": "Use the accent from the drawn palette.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "29 different font sizes (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 28, 30, 36, 40, 56, 64, 72, 80, 84, 90, 92, 96, 110, 120, 128, 360, 520, 760).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "17 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "small-title",
+   "width": 1440,
+   "message": "The h1 is 16px (\"What if managing money… just made sense? What if m\").",
+   "fix": "Set the title at display size, or make the large text of the first screen the h1.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"What\" (screen 8, 100% over a picture); \"managing\" (screen 2, 100% over a picture); \"money…\" (screen 2, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it."
+  },
+  {
+   "level": "WARN",
+   "id": "long-pin",
+   "width": 1440,
+   "message": "The same large text stays on screen for 4 screens in a row: \"A little here.\"; \"A little there.\"",
+   "fix": "A pinned element earns two screens, and something must change at each. Shorten the run or give every screen its own content."
+  },
+  {
+   "level": "FAIL",
+   "id": "empty-screens",
+   "width": 1440,
+   "message": "2 of 12 desktop screens are almost empty ground (under 20% of the screen holds text, a picture or a colour field): screens 2, 3.",
+   "fix": "An empty screen is a rest only once per page. Elsewhere it means the section is underbuilt: set its content larger, give it the full information, put it on a colour field, or cut it."
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 390,
+   "message": "5 headline(s) wrap past two lines at 390px: \"What if managing money… just made sense? What if\" → 3 lines (14 words, 50px); \"What if there was a smarter way to manage money?\" → 3 lines (10 words, 44px); \"What if tracking your spending required less eff\" → 3 lines (8 words, 36px); \"I didn’t set out to build an app. I set out to u\" → 3 lines (15 words, 38px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 24px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "hero-words",
+   "width": 390,
+   "message": "Hero headline is 14 words (\"What if managing money… just made sense? What if managing mo\"). Gallery median is 5.",
+   "fix": "Say the one thing. Move the rest to the supporting line."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 390,
+   "message": "8 eyebrow/kicker label(s) above headings: \"From idea to reality\" above \"An idea became a product.\"; \"Real Paisa screens · sample data\" above \"₹\"; \"Chapter two\" above \"What if tracking your spending required \"; \"Supported UPI app\" above \"₹486\"; \"Chapter three\" above \"Tracking is only the beginning.\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence."
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 390,
+   "message": "Low-contrast text: \"Real Paisa screens · sample data\" 3:1 needs 4.5:1; \"Real Paisa screen · sample data\" 3:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour."
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 390,
+   "message": "3 typefaces in use (Plus Jakarta Sans, Instrument Serif, JetBrains Mono).",
+   "fix": "Two at most."
+  },
+  {
+   "level": "FAIL",
+   "id": "blank-gap",
+   "width": 390,
+   "message": "1 stretch(es) of the page hold nothing at all: 972px at 9888px (the screen is 844px tall).",
+   "fix": "Close the gap: a section gap is 120–240px on desktop and 72–112px on a phone. Look for a min-height: 100vh on a short section, an empty grid row, a hidden element still holding its space, or a reveal that never fired. A deliberate rest is a placed picture or colour field, not nothing."
+  },
+  {
+   "level": "FAIL",
+   "id": "covered-text",
+   "width": 390,
+   "message": "Large text lies under another element at some scroll position: \"₹486\" (screen 6, 75% hidden)",
+   "fix": "Nothing may sit on top of a headline or statement. Move the picture, shorten the pinned run, or raise the text above it (z-index) and give it a ground."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-fold.jpg",
+   "pages": [
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-page-01.jpg",
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-page-02.jpg",
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-page-03.jpg"
+   ],
+   "film": [
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-film-01.jpg",
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-film-02.jpg",
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\desktop-film-03.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\mobile-fold.jpg",
+   "pages": [
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\mobile-page-01.jpg",
+    "E:\\PROJECTS\\Paisa_website\\.taste-skill\\bird\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

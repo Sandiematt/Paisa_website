@@ -4,9 +4,10 @@ import type { ReactNode } from "react";
 import { MotionConfig } from "motion/react";
 
 import { Splash } from "@/components/splash/Splash";
+import { FlightBird } from "@/components/story/FlightBird";
 import { StoryNav } from "@/components/story/StoryNav";
 
-/** Client shell: splash first, persistent story nav, reduced-motion aware animation. */
+/** Client shell: splash first, persistent story nav, the flying Paisa bird, reduced-motion aware animation. */
 export function StoryRoot({ children }: { children: ReactNode }) {
   return (
     <MotionConfig reducedMotion="user">
@@ -19,6 +20,7 @@ export function StoryRoot({ children }: { children: ReactNode }) {
       <Splash />
       <StoryNav />
       <main id="story">{children}</main>
+      <FlightBird />
     </MotionConfig>
   );
 }

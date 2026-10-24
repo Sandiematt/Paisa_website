@@ -95,6 +95,7 @@ function Brand({ markSize, wordClass }: { markSize: number; wordClass: string })
         height={markSize}
         style={{ width: markSize, height: markSize }}
         draggable={false}
+        data-bird-perch=""
       />
       <span className={`font-bold text-warm-white ${wordClass}`}>Paisa</span>
     </div>

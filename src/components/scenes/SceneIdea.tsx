@@ -98,10 +98,11 @@ function IdeaDesktop() {
   const innerRingScale = useTransform(progress, [0.52, 0.76], [0.3, 1]);
   const outerRingOpacity = useTransform(progress, [0.58, 0.78], [0, 1]);
   const outerRingScale = useTransform(progress, [0.58, 0.82], [0.4, 1]);
-  const logoOpacity = useTransform(progress, [0.66, 0.76], [0, 1]);
+  // The flying bird lands in the mark (see FlightBird), so the mark's slot just
+  // opens here and grows with the halos; a slow blur-in would hand a crisp bird
+  // over to a soft logo.
+  const logoOpacity = useTransform(progress, [0.66, 0.68], [0, 1]);
   const logoScale = useTransform(progress, [0.66, 0.82], [0.8, 1]);
-  const logoBlur = useTransform(progress, [0.66, 0.82], [14, 0]);
-  const logoFilter = useTransform(logoBlur, blurFilter);
   const tagOpacity = useTransform(progress, [0.84, 0.93], [0, 1]);
   const tagY = useTransform(progress, [0.84, 0.93], [14, 0]);
 
@@ -180,7 +181,7 @@ function IdeaDesktop() {
           />
           <motion.div
             className="absolute left-[620px] top-[230px] size-[200px]"
-            style={{ opacity: logoOpacity, scale: logoScale, filter: logoFilter, willChange: "transform" }}
+            style={{ opacity: logoOpacity, scale: logoScale, willChange: "transform" }}
           >
             <Image
               src={logoMark.src}
@@ -190,6 +191,7 @@ function IdeaDesktop() {
               sizes="200px"
               className="block size-[200px] select-none"
               draggable={false}
+              data-bird-perch=""
             />
           </motion.div>
 
@@ -242,6 +244,7 @@ function IdeaMobile() {
             sizes="72px"
             className="block size-[72px] select-none"
             draggable={false}
+            data-bird-perch=""
           />
           <h2 className="font-sans text-[56px] font-bold leading-none tracking-[-2.4px] text-warm-white">Paisa.</h2>
           <p className="font-serif text-[22px] italic leading-normal text-lavender">Your money. Your clarity.</p>
