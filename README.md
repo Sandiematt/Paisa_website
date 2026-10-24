@@ -88,8 +88,7 @@ docs/story-brief.md     design-to-code brief (scene map, tokens, choreography)
 Outbound links live in `src/lib/site.ts`. Any link left as `null` (download, privacy policy, terms, support) is
 hidden rather than rendered as a dead button.
 
-The "Behind the idea" chapter contains two bracketed placeholders at the top of
-`src/components/scenes/SceneBehind.tsx` for the builder's own story.
+The "Behind the idea" copy lives at the top of `src/components/scenes/SceneBehind.tsx`.
 
 ## Links
 

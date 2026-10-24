@@ -12,16 +12,13 @@ import { StoryScene, useSceneProgress } from "@/components/story/StoryScene";
 import { Stage } from "@/components/story/Stage";
 
 /* -------------------------------------------------------------------------- */
-/*  Owner copy — replace these two strings with your own words.               */
+/*  Owner copy                                                                */
 /* -------------------------------------------------------------------------- */
-export const PLACEHOLDER_REASON = "[Add the moment or reason that made you start.]";
-export const PLACEHOLDER_DETAIL = "[Add a detail about what was hardest to get right.]";
-
-const HINT = "Bracketed lines are placeholders for your own words";
-
-const PARAGRAPH_ONE = "Paisa started with a simple problem: I couldn’t tell where my money went each month.";
-const PARAGRAPH_TWO =
-  "From there I designed the interface, built the backend, and experimented with AI-written insights and Android UPI detection.";
+const PARAGRAPHS = [
+  "Paisa started with a simple problem: I couldn’t tell where my money went each month. Tracking expenses manually felt tedious, and I wanted a clearer picture of my spending without having to log every transaction myself.",
+  "From there, I designed the interface, built the backend, and experimented with AI-powered spending insights and Android-based UPI detection.",
+  "The hardest part was making automatic transaction tracking reliable while avoiding duplicate entries and keeping user data private. Paisa became a way for me to explore how thoughtful design, automation, and AI could make managing money simpler.",
+];
 
 const BUILD_STEPS = ["Problem", "Exploration", "Interface", "Backend", "AI insights", "UPI detection"] as const;
 
@@ -104,35 +101,6 @@ function TypedToken({
 /* -------------------------------------------------------------------------- */
 /*  Shared bits                                                               */
 /* -------------------------------------------------------------------------- */
-function PencilIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M12 20h9" />
-      <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
-      <path d="m15 5 3 3" />
-    </svg>
-  );
-}
-
-function Placeholder({ children, className = "" }: { children: string; className?: string }) {
-  return (
-    <span
-      className={`rounded-md border border-dashed border-lavender px-1.5 py-px text-lavender ${className}`}
-    >
-      {children}
-    </span>
-  );
-}
-
 function Headline({ className }: { className: string }) {
   return (
     <h2 className={`font-serif text-warm-white ${className}`}>
@@ -144,21 +112,11 @@ function Headline({ className }: { className: string }) {
 function Narrative({ textClass }: { textClass: string }) {
   return (
     <div className="flex flex-col gap-3.5">
-      <p className={`text-text-dim ${textClass}`}>
-        {PARAGRAPH_ONE} <Placeholder>{PLACEHOLDER_REASON}</Placeholder>
-      </p>
-      <p className={`text-text-dim ${textClass}`}>
-        {PARAGRAPH_TWO} <Placeholder>{PLACEHOLDER_DETAIL}</Placeholder>
-      </p>
-    </div>
-  );
-}
-
-function Hint() {
-  return (
-    <div className="flex items-center gap-2 text-text-dim">
-      <PencilIcon className="size-3.5 shrink-0" />
-      <span className="text-xs">{HINT}</span>
+      {PARAGRAPHS.map((text) => (
+        <p key={text} className={`text-text-dim ${textClass}`}>
+          {text}
+        </p>
+      ))}
     </div>
   );
 }
@@ -233,7 +191,6 @@ function DesktopScene() {
             <ChapterLabel />
             <Headline className="text-[56px] leading-[1.05] tracking-[-1px]" />
             <Narrative textClass="text-[17px] leading-[1.65]" />
-            <Hint />
           </motion.div>
 
           {/* Editor window */}
@@ -335,9 +292,6 @@ function MobileScene() {
           </Reveal>
           <Reveal delay={0.1}>
             <Narrative textClass="text-base leading-[1.65]" />
-          </Reveal>
-          <Reveal delay={0.15}>
-            <Hint />
           </Reveal>
         </div>
 
