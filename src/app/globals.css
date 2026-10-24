@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
+/*
+ * Film tokens, mirrored 1:1 from the Wonder "Website" page (film/* tokens).
+ * Use them as Tailwind colours: bg-void, text-warm-white, border-hairline, …
+ */
+@theme {
+  --color-void: #07060b;
+  --color-charcoal: #121019;
+  --color-charcoal-raised: #1c1926;
+  --color-hairline: #ffffff14;
+  --color-hairline-strong: #ffffff26;
+  --color-warm-white: #f5f1ea;
+  --color-paper: #fbf9f5;
+  --color-text-dim: #9c97a8;
+  --color-text-faint: #5e596b;
+  --color-text-ghost: #f5f1ea59;
+  --color-ink: #15121f;
+  --color-ink-soft: #58536a;
+  --color-violet: #6d4aff;
+  --color-violet-deep: #3a1fc2;
+  --color-violet-glow: #6d4aff59;
+  --color-lavender: #b9a7ff;
+  --color-mint: #19e3a6;
+  --color-mint-soft: #19e3a626;
+  --color-mint-haze: #19e3a624;
+  --color-coral: #ff7a7a;
+  --color-haze: #3a1fc24d;
+  --color-haze-faint: #3a1fc229;
+  --color-scrim: #07060bbf;
+  --color-gold: #e9c77b;
+  /* App screen ground (Paisa app `colors.ground`) — phone screen backing + splash. */
+  --color-app-ground: #0e0e11;
+  /* Light-scene helpers (Chapter Four). */
+  --color-primary-wash: #efeaff;
+  --color-surface-strong: #ece8f7;
+  --color-line-light: #e3def1;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --ease-film: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Overwritten before paint by the inline script in layout.tsx. */
+  --stage-scale: 1;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-void);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-void);
+  color: var(--color-warm-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-violet);
+  color: var(--color-warm-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-lavender);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Splash locks scrolling until it has played. */
+html.splash-active,
+html.splash-active body {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
