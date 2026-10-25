@@ -22,11 +22,13 @@ import type { ChapterId } from "@/lib/site";
 const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
 
 /**
- * Where the pinned cinematic layout is used: wide *and* landscape-ish. Portrait
- * tablets get the natural-scroll layout instead of a letterboxed 1440×900
- * stage. Mirrors the `cinema` variant in globals.css.
+ * Where the pinned cinematic layout is used: wide, landscape-ish *and* tall
+ * enough. Portrait tablets get the natural-scroll layout instead of a
+ * letterboxed 1440×900 stage, and so do landscape phones, where the stage
+ * would shrink below half size and its copy to a few pixels. Mirrors the
+ * `cinema` variant in globals.css.
  */
-export const CINEMA_QUERY = "(min-width: 48rem) and (min-aspect-ratio: 1/1)";
+export const CINEMA_QUERY = "(min-width: 48rem) and (min-aspect-ratio: 1/1) and (min-height: 32rem)";
 
 /**
  * Scroll distance, in viewport heights, over which a pinned scene dissolves in

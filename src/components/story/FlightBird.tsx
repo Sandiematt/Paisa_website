@@ -41,19 +41,19 @@ const CINEMA: Record<ChapterId, Pose> = {
 
 /**
  * Natural-scroll layout: the copy runs nearly full width, so the bird stays small
- * and rests in the bottom corners, crossing sides at each chapter.
+ * and rests tight in the bottom corners, crossing sides at each chapter.
  */
 const NATURAL: Record<ChapterId, Pose> = {
-  question: { x: 0.66, y: -0.74, s: 0.42, facing: -1, pitch: 6, roll: -4 },
-  problem: { x: -0.68, y: -0.74, s: 0.42, facing: 1, pitch: 10, roll: 6 },
-  idea: { x: 0.68, y: -0.74, s: 0.42, facing: -1, pitch: -6, roll: -8 },
-  product: { x: -0.68, y: -0.74, s: 0.42, facing: 1, pitch: 8, roll: 4 },
-  "know-your-money": { x: 0.68, y: -0.74, s: 0.42, facing: -1, pitch: 4, roll: 0 },
-  "smarter-tracking": { x: -0.68, y: -0.74, s: 0.42, facing: 1, pitch: 8, roll: 4 },
-  insights: { x: 0.68, y: -0.74, s: 0.42, facing: -1, pitch: 6, roll: -4 },
-  "better-habits": { x: -0.68, y: -0.74, s: 0.42, facing: 1, pitch: 10, roll: 6 },
-  "behind-the-idea": { x: 0.68, y: -0.74, s: 0.42, facing: -1, pitch: 4, roll: 0 },
-  "story-continues": { x: -0.66, y: -0.74, s: 0.42, facing: 1, pitch: 4, roll: 0 },
+  question: { x: 0.8, y: -0.74, s: 0.38, facing: -1, pitch: 6, roll: -4 },
+  problem: { x: -0.8, y: -0.74, s: 0.38, facing: 1, pitch: 10, roll: 6 },
+  idea: { x: 0.8, y: -0.74, s: 0.38, facing: -1, pitch: -6, roll: -8 },
+  product: { x: -0.8, y: -0.74, s: 0.38, facing: 1, pitch: 8, roll: 4 },
+  "know-your-money": { x: 0.8, y: -0.74, s: 0.38, facing: -1, pitch: 4, roll: 0 },
+  "smarter-tracking": { x: -0.8, y: -0.74, s: 0.38, facing: 1, pitch: 8, roll: 4 },
+  insights: { x: 0.8, y: -0.74, s: 0.38, facing: -1, pitch: 6, roll: -4 },
+  "better-habits": { x: -0.8, y: -0.74, s: 0.38, facing: 1, pitch: 10, roll: 6 },
+  "behind-the-idea": { x: 0.8, y: -0.74, s: 0.38, facing: -1, pitch: 4, roll: 0 },
+  "story-continues": { x: -0.8, y: -0.74, s: 0.38, facing: 1, pitch: 4, roll: 0 },
 };
 
 /** Bird height as a share of the viewport height at s = 1. */

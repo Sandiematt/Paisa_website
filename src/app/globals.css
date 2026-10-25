@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 /*
- * Pinned cinematic layout: wide *and* landscape-ish viewports. Portrait tablets
- * use the natural-scroll layout. Mirrors CINEMA_QUERY in StoryScene.tsx.
+ * Pinned cinematic layout: wide, landscape-ish and tall enough. Portrait tablets
+ * and landscape phones use the natural-scroll layout. Mirrors CINEMA_QUERY in
+ * StoryScene.tsx.
  */
 @custom-variant cinema {
-  @media (min-width: 48rem) and (min-aspect-ratio: 1/1) {
+  @media (min-width: 48rem) and (min-aspect-ratio: 1/1) and (min-height: 32rem) {
     @slot;
   }
 }
@@ -67,7 +68,7 @@
  * reaches its last frame (see StoryScene). Anchors land once the dissolve has
  * finished.
  */
-@media (min-width: 48rem) and (min-aspect-ratio: 1/1) and (prefers-reduced-motion: no-preference) {
+@media (min-width: 48rem) and (min-aspect-ratio: 1/1) and (min-height: 32rem) and (prefers-reduced-motion: no-preference) {
   .story-scene + .story-scene {
     margin-top: calc(-100lvh - var(--scene-dissolve));
     scroll-margin-top: calc(-1 * var(--scene-dissolve));

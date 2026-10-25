@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 
 import { chapters, logoMark, type ChapterId } from "@/lib/site";
@@ -22,6 +22,7 @@ const initial: NavState = { chapter: "question", theme: "dark", brand: "dim" };
 export function StoryNav() {
   const [state, setState] = useState<NavState>(initial);
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
@@ -68,8 +69,16 @@ export function StoryNav() {
   useEffect(() => {
     if (!menuOpen) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    // A tap anywhere outside the bar or the chapter list closes it.
+    const onPointer = (e: PointerEvent) => {
+      if (!headerRef.current?.contains(e.target as Node)) setMenuOpen(false);
+    };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
   }, [menuOpen]);
 
   const current = chapters.find((c) => c.id === state.chapter) ?? chapters[0];
@@ -79,7 +88,7 @@ export function StoryNav() {
   const outline = light ? "border-line-light" : "border-hairline-strong";
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+    <header ref={headerRef} className="pointer-events-none fixed inset-x-0 top-0 z-50">
       {/* Natural-scroll scenes scroll under the bar (pinned scenes are composed with room for it). */}
       <div
         aria-hidden
@@ -89,12 +98,12 @@ export function StoryNav() {
       />
       <nav
         aria-label="Story"
-        className="pointer-events-auto relative mx-auto flex h-16 items-center justify-between px-4 transition-colors duration-500 md:h-20 md:px-14"
+        className="pointer-events-auto relative mx-auto flex h-16 items-center justify-between px-4 transition-colors duration-500 md:px-8 cinema:h-20 cinema:px-14"
       >
         <a
           href="#question"
           aria-label="Paisa — back to the beginning"
-          className="flex items-center gap-2.5 transition-opacity duration-700 ease-film"
+          className="-my-2 flex items-center gap-2.5 py-2 transition-opacity duration-700 ease-film"
           style={{
             opacity: state.brand === "hidden" ? 0 : state.brand === "dim" ? 0.6 : 1,
             pointerEvents: state.brand === "hidden" ? "none" : "auto",
@@ -138,7 +147,7 @@ export function StoryNav() {
           </a>
           <button
             type="button"
-            className={`flex h-9 w-9 items-center justify-center rounded-full border md:hidden ${outline} ${strong}`}
+            className={`flex h-9 w-9 items-center justify-center rounded-full border cinema:hidden ${outline} ${strong}`}
             aria-expanded={menuOpen}
             aria-controls="story-chapters"
             aria-label={menuOpen ? "Close chapters" : "Open chapters"}
@@ -166,7 +175,7 @@ export function StoryNav() {
         {menuOpen && (
           <motion.div
             id="story-chapters"
-            className="pointer-events-auto mx-4 rounded-3xl border border-hairline-strong bg-charcoal/95 p-3 backdrop-blur-xl md:hidden"
+            className="pointer-events-auto mx-4 max-h-[calc(100svh-5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-hairline-strong bg-charcoal/95 p-3 backdrop-blur-xl sm:ml-auto sm:w-80 md:mr-8 cinema:hidden"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}

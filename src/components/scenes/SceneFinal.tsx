@@ -158,7 +158,7 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
         <a
           href={links.portfolio}
           {...EXTERNAL}
-          className={`w-fit text-[13px] tracking-[0.2px] text-text-dim transition-colors hover:text-lavender ${FOCUS}`}
+          className={`-my-3 w-fit py-3 text-[13px] tracking-[0.2px] text-text-dim transition-colors hover:text-lavender ${FOCUS}`}
         >
           Built by <span className="underline decoration-hairline-strong underline-offset-4">sandiematt.com</span>
         </a>
@@ -184,7 +184,7 @@ function FooterRow({ className }: { className: string }) {
               key={l.label}
               href={l.href}
               {...EXTERNAL}
-              className={`transition-colors hover:text-warm-white ${FOCUS}`}
+              className={`-my-3 py-3 transition-colors hover:text-warm-white ${FOCUS}`}
             >
               {l.label}
             </a>
@@ -193,7 +193,7 @@ function FooterRow({ className }: { className: string }) {
       )}
       <div className="flex flex-wrap items-center gap-x-5 gap-y-2 md:ml-auto">
         <span>© 2026 Paisa</span>
-        <a href="#question" className={`inline-flex items-center gap-1.5 transition-colors hover:text-warm-white ${FOCUS}`}>
+        <a href="#question" className={`-my-3 inline-flex items-center gap-1.5 py-3 transition-colors hover:text-warm-white ${FOCUS}`}>
           <ArrowUpIcon className="size-3.5" />
           Watch the story again
         </a>

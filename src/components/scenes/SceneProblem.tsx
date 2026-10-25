@@ -341,7 +341,7 @@ function ProblemMobile() {
       >
         31
       </span>
-      <div className="relative flex flex-col gap-16">
+      <div className="relative mx-auto flex max-w-[440px] flex-col gap-16">
         <div className="flex flex-col gap-5">
           <Reveal>
             <p className="font-serif text-[52px] italic leading-none tracking-[-1px] text-warm-white">
@@ -362,8 +362,8 @@ function ProblemMobile() {
               A little there.
             </p>
           </Reveal>
-          <Reveal delay={0.1} className="self-start rotate-1">
-            <Notification title="₹349 paid via UPI" body="To Swiggy · just now" boxed className="w-[300px]" />
+          <Reveal delay={0.1} className="w-full max-w-[300px] self-start rotate-1">
+            <Notification title="₹349 paid via UPI" body="To Swiggy · just now" boxed className="w-full" />
           </Reveal>
           <Reveal delay={0.15} className="-rotate-2 self-start">
             <Chip name="Groceries" amount="–₹1,840" />

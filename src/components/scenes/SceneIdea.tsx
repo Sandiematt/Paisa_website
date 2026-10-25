@@ -223,7 +223,7 @@ function IdeaMobile() {
         aria-hidden
         className="absolute -left-10 bottom-[160px] h-[420px] w-[470px] rounded-full bg-haze blur-[100px]"
       />
-      <div className="relative flex flex-col items-center gap-24">
+      <div className="relative mx-auto flex max-w-[440px] flex-col items-center gap-24">
         <div className="flex flex-col items-center gap-6 text-center">
           <Reveal>
             <p className="font-serif text-2xl italic leading-normal text-text-dim">One day, I asked myself…</p>

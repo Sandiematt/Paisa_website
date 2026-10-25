@@ -200,7 +200,7 @@ function ProductMobile() {
       <Reveal className="relative flex justify-center">
         <PhoneFrame screen="home" width={190} style={{ rotate: -3 }} />
       </Reveal>
-      <div className="relative mt-12 flex flex-col gap-3">
+      <div className="relative mx-auto mt-12 flex max-w-[440px] flex-col gap-3">
         <Reveal>
           <span className="block text-xs font-semibold uppercase tracking-[3px] text-mint">
             From idea to reality

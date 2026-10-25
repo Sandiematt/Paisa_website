@@ -258,7 +258,7 @@ function QuestionMobile() {
           { x: 580, y: 745, r: 1.4, color: "#19E3A6", opacity: 0.3 },
         ]}
       />
-      <h1 className="relative flex flex-wrap items-baseline gap-x-3 gap-y-0">
+      <h1 className="relative mx-auto flex w-full max-w-[440px] flex-wrap items-baseline gap-x-3 gap-y-0">
         <span className="sr-only">What if managing money… just made sense?</span>
         <span aria-hidden className="contents">
           {WORDS.map((w, i) => (

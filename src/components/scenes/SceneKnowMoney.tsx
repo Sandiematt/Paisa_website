@@ -285,7 +285,7 @@ function KnowMobile() {
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[360px] h-[420px] w-[360px] -translate-x-1/2 rounded-full bg-haze-faint blur-[100px]"
       />
-      <div className="relative flex flex-col gap-4">
+      <div className="relative mx-auto flex max-w-[440px] flex-col gap-4">
         <Reveal>
           <span className="block text-xs font-semibold uppercase tracking-[3px] text-mint">Chapter one</span>
         </Reveal>
@@ -317,7 +317,7 @@ function KnowMobile() {
         </PhoneFrame>
       </Reveal>
 
-      <ul className="relative mt-12 flex flex-col gap-6">
+      <ul className="relative mx-auto mt-12 flex max-w-[440px] flex-col gap-6">
         {callouts.map((c, i) => (
           <li key={c.key}>
             <Reveal delay={i * 0.06} className="flex items-start gap-4">
@@ -333,7 +333,7 @@ function KnowMobile() {
           </li>
         ))}
       </ul>
-      <Reveal className="relative mt-8">
+      <Reveal className="relative mx-auto mt-8 max-w-[440px]">
         <span className="block text-xs text-text-faint">Real Paisa screen · sample data</span>
       </Reveal>
     </div>
