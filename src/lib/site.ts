@@ -4,11 +4,25 @@
  */
 export const links = {
   github: "https://github.com/Sandiematt/Paisa" as string | null,
-  download: null as string | null,
+  // Always the newest GitHub release's `Paisa.apk`; ship a new version by publishing a release.
+  download: "https://github.com/Sandiematt/Paisa/releases/latest/download/Paisa.apk" as string | null,
   privacy: null as string | null,
   terms: null as string | null,
   support: null as string | null,
   portfolio: "https://sandiematt.com" as string | null,
+};
+
+/**
+ * The Android build attached to the latest GitHub release. Read from the APK itself
+ * (minSdk 26, accessibility service label); update when the file is replaced.
+ */
+export const apk = {
+  fileName: "Paisa.apk",
+  size: "84 MB",
+  minAndroid: "8.0",
+  version: "1.0",
+  /** Label Android shows for the accessibility service in Settings. */
+  serviceLabel: "Paisa auto-tracking",
 };
 
 /** Real Paisa app screens (exported from the Wonder "Paisa app ui" file, 390px wide). */

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 
+import { CINEMA_QUERY } from "@/components/story/StoryScene";
 import { chapters, logoMark, type ChapterId } from "@/lib/site";
 
 type NavState = {
@@ -15,8 +16,20 @@ type NavState = {
 const initial: NavState = { chapter: "question", theme: "dark", brand: "dim" };
 
 /**
+ * The final scene's download buttons only fade in late in its pinned scroll,
+ * so in the cinema layout jump to the end of the page, where they're shown.
+ * The natural-scroll layout just follows the anchor.
+ */
+function jumpToDownload(e: MouseEvent<HTMLAnchorElement>) {
+  if (!window.matchMedia(CINEMA_QUERY).matches) return;
+  e.preventDefault();
+  window.scrollTo({ top: document.documentElement.scrollHeight });
+  history.replaceState(null, "", "#story-continues");
+}
+
+/**
  * Persistent story navigation (Wonder "Story Navigation"): brand, chapter
- * progress and a "Skip to the product" shortcut. It reads the active scene's
+ * progress, a download shortcut and "Skip to the product". It reads the active scene's
  * data-chapter / data-nav-theme / data-nav-brand attributes.
  */
 export function StoryNav() {
@@ -134,6 +147,19 @@ export function StoryNav() {
         </div>
 
         <div className="flex items-center gap-2">
+          <a
+            href="#story-continues"
+            onClick={jumpToDownload}
+            aria-label="Go to the Android download"
+            className="flex h-9 items-center gap-2 rounded-full bg-[linear-gradient(135deg,var(--color-violet)_0%,var(--color-violet-deep)_100%)] px-2.5 text-[13px] font-medium text-warm-white shadow-[0px_8px_22px_var(--color-violet-glow)] sm:px-3.5 md:h-[38px] md:px-4"
+          >
+            <svg aria-hidden width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M12 15V3" />
+            </svg>
+            <span className="hidden sm:inline">Download app</span>
+          </a>
           <a
             href="#product"
             className={`flex h-9 items-center gap-2 rounded-full border px-3.5 text-[13px] font-medium transition-colors duration-500 md:h-[38px] md:px-4 ${outline} ${strong}`}

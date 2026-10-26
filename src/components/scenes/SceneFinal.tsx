@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, useReducedMotion, useTransform } from "motion/react";
 
+import { InstallGuide } from "@/components/install/InstallGuide";
 import { Grain, Particles } from "@/components/story/Atmosphere";
 import { PhoneFrame } from "@/components/story/PhoneFrame";
 import { Stage } from "@/components/story/Stage";
 import { StoryScene, useSceneProgress } from "@/components/story/StoryScene";
 import { Reveal } from "@/components/story/Text";
-import { links, logoMark } from "@/lib/site";
+import { apk, links, logoMark } from "@/lib/site";
 
 /* -------------------------------------------------------------------------- */
 /*  Icons (Lucide / Font Awesome paths copied from the Wonder frames)         */
@@ -117,52 +118,70 @@ function Headline({ className, lineOne, lineTwo }: { className: string; lineOne?
 
 const DOWNLOAD_NOTE = "Android download link appears here once it’s available.";
 
-/** Primary CTA + optional GitHub / download buttons + the muted download note. */
+const PRIMARY =
+  "inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--color-violet)_0%,var(--color-violet-deep)_100%)] text-base font-semibold text-warm-white shadow-[0px_14px_36px_var(--color-violet-glow)]";
+const OUTLINE =
+  "inline-flex items-center justify-center rounded-full border border-hairline-strong text-base font-semibold text-warm-white transition-colors hover:border-lavender/50";
+
+/**
+ * Android download + install guide (or Explore Paisa until the APK exists),
+ * then quiet GitHub / portfolio links. The guide itself lives in a modal.
+ */
 function Actions({ size }: { size: "desktop" | "mobile" }) {
+  const [guideOpen, setGuideOpen] = useState(false);
   const desktop = size === "desktop";
   const base = desktop ? "h-14 px-7 gap-2.5" : "h-[52px] w-full gap-2";
   const outline = desktop ? "h-14 px-6 gap-2.5" : "h-[52px] w-full gap-2";
+  const quiet = `-my-3 inline-flex w-fit items-center gap-2 py-3 text-[13px] tracking-[0.2px] text-text-dim transition-colors hover:text-lavender ${FOCUS}`;
   return (
     <>
       <div className={desktop ? "flex flex-wrap items-center gap-3 pt-2" : "flex flex-col gap-2.5"}>
-        <a
-          href="#product"
-          className={`inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--color-violet)_0%,var(--color-violet-deep)_100%)] text-base font-semibold text-warm-white shadow-[0px_14px_36px_var(--color-violet-glow)] ${base} ${FOCUS}`}
-        >
-          Explore Paisa
-          <ArrowRightIcon className="size-[18px]" />
-        </a>
-        {links.github && (
-          <a
-            href={links.github}
-            {...EXTERNAL}
-            className={`inline-flex items-center justify-center rounded-full border border-hairline-strong text-base font-semibold text-warm-white ${outline} ${FOCUS}`}
-          >
-            <GithubIcon className="size-[18px]" />
-            {desktop ? "View the project on GitHub" : "View on GitHub"}
-          </a>
-        )}
-        {links.download && (
-          <a
-            href={links.download}
-            {...EXTERNAL}
-            className={`inline-flex items-center justify-center rounded-full border border-mint/40 bg-mint-soft text-base font-semibold text-mint ${outline} ${FOCUS}`}
-          >
-            <DownloadIcon className="size-[18px]" />
-            Get the app
+        {links.download ? (
+          <>
+            <a href={links.download} download={apk.fileName} className={`${PRIMARY} ${base} ${FOCUS}`}>
+              <DownloadIcon className="size-[18px]" />
+              Download for Android
+            </a>
+            <button
+              type="button"
+              onClick={() => setGuideOpen(true)}
+              aria-haspopup="dialog"
+              className={`${OUTLINE} ${outline} ${FOCUS}`}
+            >
+              How to install &amp; set up
+              <ArrowRightIcon className="size-[18px]" />
+            </button>
+          </>
+        ) : (
+          <a href="#product" className={`${PRIMARY} ${base} ${FOCUS}`}>
+            Explore Paisa
+            <ArrowRightIcon className="size-[18px]" />
           </a>
         )}
       </div>
-      {!links.download && <p className="w-fit text-sm text-text-dim">{DOWNLOAD_NOTE}</p>}
-      {links.portfolio && (
-        <a
-          href={links.portfolio}
-          {...EXTERNAL}
-          className={`-my-3 w-fit py-3 text-[13px] tracking-[0.2px] text-text-dim transition-colors hover:text-lavender ${FOCUS}`}
-        >
-          Built by <span className="underline decoration-hairline-strong underline-offset-4">sandiematt.com</span>
-        </a>
+      {links.download ? (
+        <p className="w-fit text-sm text-text-dim">
+          APK for Android {apk.minAndroid} and later · {apk.size} · Not on the Play Store yet
+        </p>
+      ) : (
+        <p className="w-fit text-sm text-text-dim">{DOWNLOAD_NOTE}</p>
       )}
+      <div className={desktop ? "flex flex-wrap items-center gap-x-7" : "flex flex-col gap-1"}>
+        {links.github && (
+          <a href={links.github} {...EXTERNAL} className={quiet}>
+            <GithubIcon className="size-3.5" />
+            <span className="underline decoration-hairline-strong underline-offset-4">View the project on GitHub</span>
+          </a>
+        )}
+        {links.portfolio && (
+          <a href={links.portfolio} {...EXTERNAL} className={quiet}>
+            <span>
+              Built by <span className="underline decoration-hairline-strong underline-offset-4">sandiematt.com</span>
+            </span>
+          </a>
+        )}
+      </div>
+      {links.download && <InstallGuide open={guideOpen} onClose={() => setGuideOpen(false)} />}
     </>
   );
 }

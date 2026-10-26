@@ -138,3 +138,8 @@ html.splash-active body {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* An open modal (the install guide) holds the story in place behind it. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
