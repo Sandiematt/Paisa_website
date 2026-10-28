@@ -275,39 +275,53 @@ function GuideBody() {
           </ul>
           <p>It’s optional. You can skip it and add expenses yourself, and turn it off at any time.</p>
         </Note>
+        <Note tone="gold" title="Sensitive permission">
+          <p>
+            Accessibility access is powerful: an app with it can read what’s on your screen. Only grant it to apps
+            you trust. Grant it to the Paisa app you installed from this website, and to no other app that asks
+            for it, including anything that only looks like Paisa.
+          </p>
+        </Note>
+        <p className="text-[15px] leading-relaxed text-warm-white/85">
+          Because Paisa is installed from an APK rather than Google Play, Android blocks its Accessibility Service
+          until you allow “restricted settings”. Follow these steps in order:
+        </p>
         <Steps>
           <Step>
-            Open <Path>Settings → Accessibility</Path>.
+            Open <Path>Settings → Apps → Paisa</Path>.
           </Step>
           <Step>
-            Find <Ui>{apk.serviceLabel}</Ui>. It’s usually under <Path>Downloaded apps</Path> or{" "}
-            <Path>Installed apps</Path>.
+            Tap the <Ui>⋮</Ui> three-dot menu in the top-right corner and select{" "}
+            <Ui>Allow restricted settings</Ui>. Authenticate with your PIN, pattern or fingerprint if prompted.
           </Step>
           <Step>
-            Turn on <Ui>Use {apk.serviceLabel}</Ui>, then tap <Ui>Allow</Ui> on the confirmation.
+            Return to Paisa and tap the option to enable its Accessibility Service.
           </Step>
-          <Step>Open Paisa again. It shows when automatic tracking is active.</Step>
+          <Step>
+            Go to <Path>Settings → Accessibility → Installed apps</Path> (some phones call it{" "}
+            <Path>Downloaded apps</Path>; the label varies by device).
+          </Step>
+          <Step>
+            Select <Ui>{apk.serviceLabel}</Ui>, turn on <Ui>Use {apk.serviceLabel}</Ui>, and tap{" "}
+            <Ui>Allow</Ui> on the permission dialog.
+          </Step>
         </Steps>
-        <Paths summary="Can’t find it? Paths by phone brand" rows={ACCESSIBILITY_PATHS} />
-        <Note title="Toggle greyed out? “Restricted setting”">
+        <Note title="Can’t find “Allow restricted settings”?">
           <p>
-            On Android 13 and later, apps installed from outside the Play Store need one extra approval before
-            they can use Accessibility.
+            On some devices the service must first be enabled, or attempted, from Paisa. That’s what triggers the
+            “Restricted setting” warning. Tap <Ui>OK</Ui> on it, then repeat steps 1 and 2: the option should now
+            appear in the ⋮ menu.
           </p>
-          <ol className="flex list-decimal flex-col gap-1 pl-5 marker:text-lavender/70">
-            <li>
-              Try the toggle once, and tap <Ui>OK</Ui> on the “Restricted setting” message.
-            </li>
-            <li>
-              Open <Path>Settings → Apps → Paisa</Path>.
-            </li>
-            <li>
-              Tap <Ui>⋮</Ui> (top right), then <Ui>Allow restricted settings</Ui>, and confirm with your PIN or
-              fingerprint.
-            </li>
-            <li>Go back to Accessibility and turn the service on.</li>
-          </ol>
+          <p>
+            If the three-dot menu or the option is still missing, the exact path varies by Android version and
+            manufacturer. Use the list below, or search Settings for “Allow restricted settings” or “Accessibility”.
+            Android 12 and earlier don’t have this restriction, so you can skip to step 4.
+          </p>
         </Note>
+        <Paths summary="Can’t find it? Paths by phone brand" rows={ACCESSIBILITY_PATHS} />
+        <p className="text-sm leading-relaxed text-text-dim">
+          Once it’s on, open Paisa again. It shows when automatic tracking is active.
+        </p>
       </Section>
     </div>
   );
