@@ -161,7 +161,7 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
       </div>
       {links.download ? (
         <p className="w-fit text-sm text-text-dim">
-          APK for Android {apk.minAndroid} and later · {apk.size} · Not on the Play Store yet
+          Beta {apk.version.replace(" (beta)", "")} · Android {apk.minAndroid}+ · {apk.size} · Not on the Play Store yet
         </p>
       ) : (
         <p className="w-fit text-sm text-text-dim">{DOWNLOAD_NOTE}</p>
