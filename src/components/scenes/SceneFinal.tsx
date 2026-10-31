@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { motion, useReducedMotion, useTransform } from "motion/react";
 
-import { InstallGuide } from "@/components/install/InstallGuide";
 import { Grain, Particles } from "@/components/story/Atmosphere";
 import { PhoneFrame } from "@/components/story/PhoneFrame";
 import { Stage } from "@/components/story/Stage";
@@ -116,6 +115,8 @@ function Headline({ className, lineOne, lineTwo }: { className: string; lineOne?
   );
 }
 
+const SETUP_URL = "https://paisa-setup.sandiematt.com";
+
 const DOWNLOAD_NOTE = "Android download link appears here once it’s available.";
 
 const PRIMARY =
@@ -128,7 +129,6 @@ const OUTLINE =
  * then quiet GitHub / portfolio links. The guide itself lives in a modal.
  */
 function Actions({ size }: { size: "desktop" | "mobile" }) {
-  const [guideOpen, setGuideOpen] = useState(false);
   const desktop = size === "desktop";
   const base = desktop ? "h-14 px-7 gap-2.5" : "h-[52px] w-full gap-2";
   const outline = desktop ? "h-14 px-6 gap-2.5" : "h-[52px] w-full gap-2";
@@ -142,15 +142,10 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
               <DownloadIcon className="size-[18px]" />
               Download for Android
             </a>
-            <button
-              type="button"
-              onClick={() => setGuideOpen(true)}
-              aria-haspopup="dialog"
-              className={`${OUTLINE} ${outline} ${FOCUS}`}
-            >
+            <a href={SETUP_URL} {...EXTERNAL} className={`${OUTLINE} ${outline} ${FOCUS}`}>
               How to install &amp; set up
               <ArrowRightIcon className="size-[18px]" />
-            </button>
+            </a>
           </>
         ) : (
           <a href="#product" className={`${PRIMARY} ${base} ${FOCUS}`}>
@@ -181,7 +176,6 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
           </a>
         )}
       </div>
-      {links.download && <InstallGuide open={guideOpen} onClose={() => setGuideOpen(false)} />}
     </>
   );
 }
