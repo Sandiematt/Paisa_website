@@ -78,6 +78,25 @@ function CheckIcon({ className = "" }: { className?: string }) {
   );
 }
 
+function ExternalIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    </svg>
+  );
+}
+
 /* -------------------------------------------------------------------------- */
 /*  Building blocks                                                           */
 /* -------------------------------------------------------------------------- */
@@ -156,7 +175,7 @@ function Box({ tone = "lavender", title, children }: { tone?: "lavender" | "gold
 }
 
 /** Short facts as ticked tiles instead of a bullet paragraph. */
-function Checks({ items, tone }: { items: ReactNode[]; tone: "gold" | "mint" }) {
+function Checks({ items }: { items: ReactNode[] }) {
   return (
     <ul className="grid gap-2 sm:grid-cols-2">
       {items.map((item, i) => (
@@ -164,7 +183,7 @@ function Checks({ items, tone }: { items: ReactNode[]; tone: "gold" | "mint" }) 
           key={i}
           className="flex items-start gap-2 rounded-xl bg-void/60 px-3 py-2.5 text-[13px] leading-snug text-warm-white/90"
         >
-          <CheckIcon className={`mt-px size-3.5 shrink-0 ${tone === "gold" ? "text-gold" : "text-mint"}`} />
+          <CheckIcon className="mt-px size-3.5 shrink-0 text-gold" />
           <span>{item}</span>
         </li>
       ))}
@@ -204,21 +223,6 @@ const UNKNOWN_APPS_PATHS: [string, string][] = [
   ["Any other phone", "Search Settings for “Install unknown apps”"],
 ];
 
-const RESTRICTED_HELP: [string, string][] = [
-  ["Try this first", "Turn the service on from inside Paisa, tap OK on the “Restricted setting” warning, then repeat step A."],
-  ["Android 12 or older", "There’s no restriction. Go straight to step B."],
-];
-
-const ACCESSIBILITY_PATHS: [string, string][] = [
-  ["Pixel, Motorola, Nokia", `Settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
-  ["Samsung", `Settings → Accessibility → Installed apps → ${apk.serviceLabel}`],
-  ["Xiaomi, Redmi, POCO", `Settings → Additional settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
-  ["OnePlus, OPPO, realme", `Settings → Additional settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
-  ["vivo, iQOO", `Settings → Shortcuts & accessibility → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
-  ["Android 8 to 11", `Settings → Accessibility → ${apk.serviceLabel}`],
-  ["Any other phone", "Search Settings for “Accessibility” or “Paisa”"],
-];
-
 function GuideBody() {
   return (
     <ol className="flex flex-col gap-4">
@@ -240,7 +244,6 @@ function GuideBody() {
         <Box tone="gold" title="Play Protect warning?">
           <p>Normal for apps outside the Play Store. Continue only if:</p>
           <Checks
-            tone="gold"
             items={[
               "You downloaded it from this site",
               `It’s ${apk.fileName}, about ${apk.size}`,
@@ -268,33 +271,20 @@ function GuideBody() {
         </Box>
       </Step>
 
-      <Step number="4" title="Turn on auto-tracking" tag="Optional">
-        <Line>Lets Paisa log your UPI payments for you. Skip it and add expenses yourself.</Line>
-        <Box title="What it does">
-          <Checks
-            tone="mint"
-            items={[
-              "Only Google Pay, PhonePe & Paytm",
-              "Never your UPI PIN or passwords",
-              "Everything stays on your phone",
-              "Only taps Back if you cancel a budget warning",
-            ]}
-          />
-        </Box>
-        <div className="flex flex-col gap-2">
-          <p className="text-[13px] font-medium text-text-dim">A · Allow restricted settings</p>
-          <TapPath steps={["Settings", "Apps", "Paisa", "⋮", "Allow restricted settings"]} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <p className="text-[13px] font-medium text-text-dim">B · Switch it on</p>
-          <TapPath steps={["Settings", "Accessibility", "Downloaded apps", apk.serviceLabel, "On"]} />
-        </div>
-        <Box tone="gold" title="Only for Paisa">
-          <p>This access can read your screen. Give it only to the Paisa you installed from this site.</p>
-        </Box>
-        <Paths summary="No “Allow restricted settings”?" rows={RESTRICTED_HELP} />
-        <Paths summary="Can’t find it? Paths by phone brand" rows={ACCESSIBILITY_PATHS} />
-      </Step>
+      {links.setup && (
+        <Step number="4" title="Turn on auto-tracking" tag="Optional">
+          <Line>Lets Paisa log your UPI payments for you. The setup guide walks you through it.</Line>
+          <a
+            href={links.setup}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex h-11 w-fit items-center gap-2 rounded-full border border-lavender/40 bg-haze-faint px-5 text-sm font-semibold text-warm-white transition-colors hover:border-lavender ${FOCUS}`}
+          >
+            Open auto-tracking setup
+            <ExternalIcon className="size-4 text-lavender" />
+          </a>
+        </Step>
+      )}
     </ol>
   );
 }

@@ -10,6 +10,8 @@ export const links = {
   terms: null as string | null,
   support: null as string | null,
   portfolio: "https://sandiematt.com" as string | null,
+  // Full auto-tracking (Accessibility) setup, per phone brand.
+  setup: "https://paisa-setup.sandiematt.com" as string | null,
 };
 
 /**
