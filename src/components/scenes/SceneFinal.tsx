@@ -148,7 +148,7 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
               aria-haspopup="dialog"
               className={`${OUTLINE} ${outline} ${FOCUS}`}
             >
-              How to install &amp; set up
+              Setup guide
               <ArrowRightIcon className="size-[18px]" />
             </button>
           </>
@@ -160,9 +160,13 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
         )}
       </div>
       {links.download ? (
-        <p className="w-fit text-sm text-text-dim">
-          Beta {apk.version.replace(" (beta)", "")} · Android {apk.minAndroid}+ · {apk.size} · Not on the Play Store yet
-        </p>
+        <ul aria-label="About the download" className="flex flex-wrap gap-2">
+          {[`Beta ${apk.version.replace(" (beta)", "")}`, `Android ${apk.minAndroid}+`, apk.size].map((fact) => (
+            <li key={fact} className="rounded-full border border-hairline px-3 py-1 text-xs text-text-dim">
+              {fact}
+            </li>
+          ))}
+        </ul>
       ) : (
         <p className="w-fit text-sm text-text-dim">{DOWNLOAD_NOTE}</p>
       )}
@@ -170,7 +174,7 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
         {links.github && (
           <a href={links.github} {...EXTERNAL} className={quiet}>
             <GithubIcon className="size-3.5" />
-            <span className="underline decoration-hairline-strong underline-offset-4">View the project on GitHub</span>
+            <span className="underline decoration-hairline-strong underline-offset-4">GitHub</span>
           </a>
         )}
         {links.portfolio && (

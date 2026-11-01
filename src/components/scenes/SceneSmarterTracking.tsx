@@ -64,6 +64,8 @@ function pointAt(fraction: number): { x: number; y: number } {
   return TABLE[lo];
 }
 
+const NOTE = "Optional · Supported UPI apps only · Never connects to your bank";
+
 // Scroll timing (fractions of scene progress)
 const DOT_START = 0.2;
 const DOT_END = 0.74;
@@ -180,10 +182,10 @@ function DesktopSmarterTracking() {
             </motion.span>
             <h2 className="block font-serif text-[56px] leading-[1.05] tracking-[-1px] text-warm-white">
               <ScrollWords
-                text="What if tracking your spending required less effort?"
+                text="What if tracking took less effort?"
                 progress={progress}
                 range={[0.02, 0.16]}
-                emphasis={[7, 8]}
+                emphasis={[4, 5]}
                 emphasisClassName="italic"
               />
             </h2>
@@ -191,8 +193,7 @@ function DesktopSmarterTracking() {
               className="max-w-[560px] font-sans text-[17px] leading-[1.6] text-text-dim"
               style={{ opacity: bodyOpacity, y: bodyY }}
             >
-              Paisa explores smarter ways to capture supported UPI transactions, helping reduce manual entry and
-              duplicate records.
+              Pay with UPI. Paisa logs it for you.
             </motion.p>
           </div>
 
@@ -203,23 +204,23 @@ function DesktopSmarterTracking() {
           >
             <div className="flex items-center justify-between">
               <span className="font-sans text-xs font-semibold uppercase tracking-[1.5px] text-text-dim">
-                Supported UPI app
+                You pay
               </span>
               <CircleCheckIcon size={18} className="text-mint" />
             </div>
             <span className="font-sans text-[40px] font-bold leading-normal tracking-[-1px] text-warm-white">₹486</span>
-            <span className="font-sans text-sm text-text-dim">Paid to Swiggy Instamart</span>
+            <span className="font-sans text-sm text-text-dim">To Swiggy Instamart</span>
             <span className="w-fit rounded-lg bg-haze px-2.5 py-1 font-sans text-xs font-medium text-lavender">
-              UPI Ref 418277309921
+              via UPI
             </span>
           </motion.div>
 
           {/* Signal chips, lit in order by the travelling dot */}
           <SignalChip progress={progress} start={0.34} left={520} top={430} icon={<AccessibilityIcon size={15} className="text-lavender" />}>
-            Payment screen recognised
+            Payment spotted
           </SignalChip>
           <SignalChip progress={progress} start={0.46} left={560} top={580} icon={<BellIcon size={15} className="text-lavender" />}>
-            Bank alert · same reference
+            Bank SMS matched
           </SignalChip>
           <SignalChip
             progress={progress}
@@ -229,7 +230,7 @@ function DesktopSmarterTracking() {
             match
             icon={<GitMergeIcon size={15} className="text-mint" />}
           >
-            Logged once, not twice
+            Saved once, not twice
           </SignalChip>
 
           {/* Receiving phone (real home screen). Visible from the first frame: Scene 07's
@@ -248,7 +249,7 @@ function DesktopSmarterTracking() {
             </div>
             <div className="flex flex-1 flex-col gap-0.5">
               <span className="font-sans text-sm font-semibold text-warm-white">Swiggy Instamart · –₹486</span>
-              <span className="font-sans text-xs text-text-dim">Detected · tap to review or edit</span>
+              <span className="font-sans text-xs text-text-dim">Added · tap to edit</span>
             </div>
           </motion.div>
         </motion.div>
@@ -259,10 +260,7 @@ function DesktopSmarterTracking() {
           style={{ opacity: noteOpacity }}
         >
           <InfoIcon size={15} className="text-text-dim" />
-          <p className="font-sans text-[13px] leading-normal text-text-dim">
-            Works with supported apps using optional Accessibility and notification access. Not every payment is
-            detected, and Paisa does not connect to your bank.
-          </p>
+          <p className="font-sans text-[13px] leading-normal text-text-dim">{NOTE}</p>
         </motion.div>
       </Stage>
     </>
@@ -326,11 +324,10 @@ function MobileSmarterTracking() {
         <Reveal className="flex flex-col gap-3">
           <span className="w-fit font-sans text-[11px] font-semibold uppercase tracking-[3px] text-mint">Chapter two</span>
           <h2 className="font-serif text-4xl leading-[1.06] text-warm-white">
-            What if tracking your spending required <em>less effort?</em>
+            What if tracking took <em>less effort?</em>
           </h2>
           <p className="font-sans text-base leading-[1.6] text-text-dim">
-            Paisa explores smarter ways to capture supported UPI transactions, helping reduce manual entry and
-            duplicate records.
+            Pay with UPI. Paisa logs it for you.
           </p>
         </Reveal>
 
@@ -339,10 +336,10 @@ function MobileSmarterTracking() {
             <div className="flex w-full items-center justify-between rounded-[18px] border border-hairline-strong bg-charcoal-raised p-4">
               <div className="flex flex-col gap-0.5">
                 <span className="font-sans text-[11px] font-semibold uppercase tracking-[1.2px] text-text-dim">
-                  Supported UPI app
+                  You pay
                 </span>
                 <span className="font-sans text-[26px] font-bold text-warm-white">₹486</span>
-                <span className="font-sans text-xs text-lavender">Paid to Swiggy Instamart · Ref 418277309921</span>
+                <span className="font-sans text-xs text-lavender">To Swiggy Instamart · via UPI</span>
               </div>
               <CircleCheckIcon size={22} className="text-mint" />
             </div>
@@ -350,13 +347,13 @@ function MobileSmarterTracking() {
           <ArrowDownIcon size={16} className="text-text-faint" />
           <div className="flex w-full flex-col gap-2">
             <Reveal delay={0.05}>
-              <MobileChip icon={<AccessibilityIcon size={14} className="text-lavender" />}>Payment screen recognised</MobileChip>
+              <MobileChip icon={<AccessibilityIcon size={14} className="text-lavender" />}>Payment spotted</MobileChip>
             </Reveal>
             <Reveal delay={0.12}>
-              <MobileChip icon={<BellIcon size={14} className="text-lavender" />}>Bank alert · same reference</MobileChip>
+              <MobileChip icon={<BellIcon size={14} className="text-lavender" />}>Bank SMS matched</MobileChip>
             </Reveal>
             <Reveal delay={0.19}>
-              <MobileChip match icon={<GitMergeIcon size={14} className="text-mint" />}>Logged once, not twice</MobileChip>
+              <MobileChip match icon={<GitMergeIcon size={14} className="text-mint" />}>Saved once, not twice</MobileChip>
             </Reveal>
           </div>
           <ArrowDownIcon size={16} className="text-text-faint" />
@@ -365,7 +362,7 @@ function MobileSmarterTracking() {
               <ScanLineIcon size={18} className="text-mint" />
               <div className="flex flex-col">
                 <span className="font-sans text-sm font-semibold text-warm-white">Swiggy Instamart · –₹486</span>
-                <span className="font-sans text-xs text-text-dim">Detected · tap to review or edit</span>
+                <span className="font-sans text-xs text-text-dim">Added · tap to edit</span>
               </div>
             </div>
           </Reveal>
@@ -374,10 +371,7 @@ function MobileSmarterTracking() {
         <Reveal>
           <p className="flex items-start gap-2.5 font-sans text-xs leading-normal text-text-dim">
             <InfoIcon size={15} className="mt-px text-text-dim" />
-            <span>
-              Works with supported apps using optional Accessibility and notification access. Not every payment is
-              detected, and Paisa does not connect to your bank.
-            </span>
+            <span>{NOTE}</span>
           </p>
         </Reveal>
       </div>

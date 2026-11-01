@@ -112,7 +112,7 @@ function DesktopHabits() {
               className="max-w-[440px] font-sans text-lg leading-[1.6] text-ink-soft"
               style={{ opacity: bodyOpacity, y: bodyY }}
             >
-              Set goals. Understand your spending. Make more intentional decisions.
+              Spend on purpose, not by accident.
             </motion.p>
             <div className="flex items-center gap-6 pt-2">
               <motion.div className="flex items-center gap-2" style={{ opacity: markerOne }}>
@@ -204,7 +204,7 @@ function MobileHabits(): ReactNode {
             Make room for <em className="text-violet-deep">what matters.</em>
           </h2>
           <p className="font-sans text-base leading-[1.6] text-ink-soft">
-            Set goals. Understand your spending. Make more intentional decisions.
+            Spend on purpose, not by accident.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1">
             <div className="flex items-center gap-2">

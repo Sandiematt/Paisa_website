@@ -61,31 +61,57 @@ function ChevronIcon({ className = "" }: { className?: string }) {
   );
 }
 
+function CheckIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
 /* -------------------------------------------------------------------------- */
 /*  Building blocks                                                           */
 /* -------------------------------------------------------------------------- */
-function Section({ number, title, children }: { number: string; title: string; children: ReactNode }) {
+function Step({
+  number,
+  title,
+  tag,
+  children,
+}: {
+  number: string;
+  title: string;
+  tag?: string;
+  children: ReactNode;
+}) {
   return (
-    <section className="flex flex-col gap-4 border-t border-hairline pt-7 first:border-t-0 first:pt-0">
-      <h3 className="flex items-baseline gap-3 text-lg font-semibold tracking-[-0.2px] text-warm-white">
-        <span className="font-mono text-[13px] font-medium text-lavender">{number}</span>
+    <li className="flex flex-col gap-3.5 rounded-[22px] border border-hairline bg-charcoal-raised/60 p-5">
+      <h3 className="flex items-center gap-3 text-[17px] font-semibold tracking-[-0.2px] text-warm-white">
+        <span className="grid size-7 shrink-0 place-items-center rounded-full bg-haze font-mono text-xs text-lavender">
+          {number}
+        </span>
         {title}
+        {tag && (
+          <span className="rounded-full border border-hairline-strong px-2 py-0.5 text-[11px] font-medium text-text-dim">
+            {tag}
+          </span>
+        )}
       </h3>
-      {children}
-    </section>
-  );
-}
-
-function Steps({ children }: { children: ReactNode }) {
-  return <ol className="flex flex-col gap-3 [counter-reset:step]">{children}</ol>;
-}
-
-function Step({ children }: { children: ReactNode }) {
-  return (
-    <li className="relative pl-10 text-[15px] leading-relaxed text-warm-white/85 [counter-increment:step] before:absolute before:left-0 before:top-0 before:flex before:size-7 before:items-center before:justify-center before:rounded-full before:border before:border-hairline-strong before:bg-charcoal-raised before:font-mono before:text-xs before:text-lavender before:content-[counter(step)]">
       {children}
     </li>
   );
+}
+
+function Line({ children }: { children: ReactNode }) {
+  return <p className="text-[15px] leading-relaxed text-warm-white/80">{children}</p>;
 }
 
 /** A setting, button or screen name exactly as Android shows it. */
@@ -93,18 +119,34 @@ function Ui({ children }: { children: ReactNode }) {
   return <strong className="font-semibold text-warm-white">{children}</strong>;
 }
 
-function Path({ children }: { children: ReactNode }) {
-  return <span className="font-medium text-warm-white">{children}</span>;
+/** Where to tap, as a row of chips: Settings › Apps › Paisa. */
+function TapPath({ steps }: { steps: string[] }) {
+  return (
+    <ol aria-label="Where to tap" className="flex flex-wrap items-center gap-1.5">
+      {steps.map((step, i) => (
+        <li key={step} className="flex items-center gap-1.5">
+          {i > 0 && (
+            <span aria-hidden className="text-text-faint">
+              ›
+            </span>
+          )}
+          <span className="rounded-lg border border-hairline-strong bg-void px-2.5 py-1 text-[13px] font-medium text-warm-white">
+            {step}
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
 }
 
-function Note({ tone = "lavender", title, children }: { tone?: "lavender" | "gold"; title: string; children: ReactNode }) {
+function Box({ tone = "lavender", title, children }: { tone?: "lavender" | "gold"; title: string; children: ReactNode }) {
   const tones = {
     lavender: "border-lavender/25 bg-haze-faint [&_h4]:text-lavender",
     gold: "border-gold/30 bg-gold/[0.06] [&_h4]:text-gold",
   };
   return (
-    <div className={`flex flex-col gap-2 rounded-2xl border p-4 text-sm leading-relaxed text-warm-white/80 ${tones[tone]}`}>
-      <h4 className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.8px]">
+    <div className={`flex flex-col gap-3 rounded-2xl border p-4 text-sm leading-relaxed text-warm-white/80 ${tones[tone]}`}>
+      <h4 className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.8px]">
         {tone === "gold" && <ShieldIcon className="size-4" />}
         {title}
       </h4>
@@ -113,21 +155,38 @@ function Note({ tone = "lavender", title, children }: { tone?: "lavender" | "gol
   );
 }
 
-/** Collapsible per-brand paths, so the common case stays short. */
-function Paths({ summary, rows }: { summary: string; rows: [brand: string, path: string][] }) {
+/** Short facts as ticked tiles instead of a bullet paragraph. */
+function Checks({ items, tone }: { items: ReactNode[]; tone: "gold" | "mint" }) {
+  return (
+    <ul className="grid gap-2 sm:grid-cols-2">
+      {items.map((item, i) => (
+        <li
+          key={i}
+          className="flex items-start gap-2 rounded-xl bg-void/60 px-3 py-2.5 text-[13px] leading-snug text-warm-white/90"
+        >
+          <CheckIcon className={`mt-px size-3.5 shrink-0 ${tone === "gold" ? "text-gold" : "text-mint"}`} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Collapsible extra help, so the common case stays short. */
+function Paths({ summary, rows }: { summary: string; rows: [label: string, text: string][] }) {
   return (
     <details className="group rounded-2xl border border-hairline bg-charcoal/60">
       <summary
-        className={`flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-warm-white/90 [&::-webkit-details-marker]:hidden ${FOCUS}`}
+        className={`flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-text-dim [&::-webkit-details-marker]:hidden ${FOCUS}`}
       >
         {summary}
         <ChevronIcon className="size-4 shrink-0 text-text-dim transition-transform group-open:rotate-180" />
       </summary>
       <dl className="flex flex-col gap-3 border-t border-hairline px-4 py-4 text-sm leading-relaxed">
-        {rows.map(([brand, path]) => (
-          <div key={brand} className="flex flex-col gap-0.5">
-            <dt className="text-text-dim">{brand}</dt>
-            <dd className="text-warm-white/90">{path}</dd>
+        {rows.map(([label, text]) => (
+          <div key={label} className="flex flex-col gap-0.5">
+            <dt className="text-text-dim">{label}</dt>
+            <dd className="text-warm-white/90">{text}</dd>
           </div>
         ))}
       </dl>
@@ -139,191 +198,104 @@ function Paths({ summary, rows }: { summary: string; rows: [brand: string, path:
 /*  Content                                                                   */
 /* -------------------------------------------------------------------------- */
 const UNKNOWN_APPS_PATHS: [string, string][] = [
-  ["Most phones (Android 8 and later)", "Settings → Apps → Special app access → Install unknown apps → your browser → Allow from this source"],
-  ["Samsung (One UI)", "Settings → Apps → ⋮ (top right) → Special access → Install unknown apps → your browser → Allow"],
-  ["Xiaomi, Redmi, POCO (MIUI / HyperOS)", "Settings → Apps → Manage apps → your browser → Install unknown apps → Allow from this source"],
-  ["Any other phone", "Open Settings and search for “Install unknown apps”"],
+  ["Most phones", "Settings → Apps → Special app access → Install unknown apps → your browser → Allow"],
+  ["Samsung", "Settings → Apps → ⋮ → Special access → Install unknown apps → your browser → Allow"],
+  ["Xiaomi, Redmi, POCO", "Settings → Apps → Manage apps → your browser → Install unknown apps → Allow"],
+  ["Any other phone", "Search Settings for “Install unknown apps”"],
+];
+
+const RESTRICTED_HELP: [string, string][] = [
+  ["Try this first", "Turn the service on from inside Paisa, tap OK on the “Restricted setting” warning, then repeat step A."],
+  ["Android 12 or older", "There’s no restriction. Go straight to step B."],
 ];
 
 const ACCESSIBILITY_PATHS: [string, string][] = [
-  ["Google Pixel, Motorola, Nokia (Android 12 and later)", `Settings → Accessibility → under “Downloaded apps”, ${apk.serviceLabel}`],
-  ["Samsung (One UI)", `Settings → Accessibility → Installed apps → ${apk.serviceLabel}`],
-  ["Xiaomi, Redmi, POCO (MIUI / HyperOS)", `Settings → Additional settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
-  ["OnePlus, OPPO, realme", `Settings → Additional settings (or Accessibility & convenience) → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
+  ["Pixel, Motorola, Nokia", `Settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
+  ["Samsung", `Settings → Accessibility → Installed apps → ${apk.serviceLabel}`],
+  ["Xiaomi, Redmi, POCO", `Settings → Additional settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
+  ["OnePlus, OPPO, realme", `Settings → Additional settings → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
   ["vivo, iQOO", `Settings → Shortcuts & accessibility → Accessibility → Downloaded apps → ${apk.serviceLabel}`],
-  ["Android 8 to 11", `Settings → Accessibility → ${apk.serviceLabel} (listed under “Downloaded services” or “Services”)`],
-  ["Any other phone", "Open Settings and search for “Accessibility” or “Paisa”"],
+  ["Android 8 to 11", `Settings → Accessibility → ${apk.serviceLabel}`],
+  ["Any other phone", "Search Settings for “Accessibility” or “Paisa”"],
 ];
 
 function GuideBody() {
   return (
-    <div className="flex flex-col gap-7">
-      <Section number="01" title="Download the APK">
-        <Steps>
-          <Step>
-            On your Android phone, tap <Ui>Download for Android</Ui> on this page. The file is{" "}
-            <Ui>{apk.fileName}</Ui> ({apk.size}).
-          </Step>
-          <Step>
-            If your browser asks whether to keep the file, tap <Ui>Download</Ui> or <Ui>Download anyway</Ui>. Browsers
-            show this for every APK, not just Paisa.
-          </Step>
-          <Step>Wait for the download to finish. You’ll see it in your notifications and in the Files app under Downloads.</Step>
-        </Steps>
-        <p className="text-sm leading-relaxed text-text-dim">
-          Downloaded on a computer? Copy the file to your phone over USB or a cloud drive, then open it from the
-          Files app.
-        </p>
-      </Section>
+    <ol className="flex flex-col gap-4">
+      <Step number="1" title="Download">
+        <Line>
+          Tap <Ui>Download for Android</Ui>. If your browser warns you, tap <Ui>Download anyway</Ui>. It does this for
+          every APK.
+        </Line>
+      </Step>
 
-      <Section number="02" title="Allow installs from your browser">
-        <p className="text-[15px] leading-relaxed text-warm-white/85">
-          Paisa isn’t on the Play Store yet, so Android asks you to approve the app you downloaded it with. This
-          permission only applies to that one app.
-        </p>
-        <Steps>
-          <Step>
-            Tap the finished download to open it. If Android says your phone isn’t allowed to install unknown apps
-            from this source, tap <Ui>Settings</Ui>.
-          </Step>
-          <Step>
-            Turn on <Ui>Allow from this source</Ui> for your browser (for example Chrome).
-          </Step>
-          <Step>Press Back to return to the installer.</Step>
-        </Steps>
-        <Paths summary="Didn’t get the prompt? Find the setting by phone" rows={UNKNOWN_APPS_PATHS} />
-      </Section>
+      <Step number="2" title="Allow your browser">
+        <Line>Open the file. When Android asks, allow installs from your browser.</Line>
+        <TapPath steps={["Settings", "Allow from this source", "Back"]} />
+        <Paths summary="Didn’t get asked? Find it by phone" rows={UNKNOWN_APPS_PATHS} />
+      </Step>
 
-      <Section number="03" title="Install Paisa">
-        <Steps>
-          <Step>
-            On the install screen, tap <Ui>Install</Ui>.
-          </Step>
-          <Step>
-            When it finishes, tap <Ui>Open</Ui>, or find Paisa in your app drawer.
-          </Step>
-          <Step>
-            Optional, but tidy: go back to <Path>Install unknown apps</Path> and turn{" "}
-            <Ui>Allow from this source</Ui> off again for your browser. Paisa stays installed.
-          </Step>
-        </Steps>
-      </Section>
+      <Step number="3" title="Install">
+        <TapPath steps={["Install", "Open"]} />
+        <Box tone="gold" title="Play Protect warning?">
+          <p>Normal for apps outside the Play Store. Continue only if:</p>
+          <Checks
+            tone="gold"
+            items={[
+              "You downloaded it from this site",
+              `It’s ${apk.fileName}, about ${apk.size}`,
+              "The installer says Paisa",
+            ]}
+          />
+          <TapPath steps={["More details", "Install anyway"]} />
+          <p className="text-text-dim">
+            Don’t turn Play Protect off. Blocked completely? Leave it blocked
+            {links.github ? (
+              <>
+                {" "}and tell us on{" "}
+                <a
+                  href={links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-lavender underline decoration-lavender/40 underline-offset-4 ${FOCUS}`}
+                >
+                  GitHub
+                </a>
+              </>
+            ) : null}
+            .
+          </p>
+        </Box>
+      </Step>
 
-      <Section number="04" title="If Google Play Protect shows a warning">
-        <p className="text-[15px] leading-relaxed text-warm-white/85">
-          Play Protect checks apps installed from outside the Play Store. Because Paisa is new and not yet
-          listed there, it may say it doesn’t recognise the app or its developer, or ask to scan it. This is
-          expected for a new APK, but it’s still worth a moment of care.
-        </p>
-        <Note tone="gold" title="Before you continue">
-          <p>Only go ahead if all of these are true:</p>
-          <ul className="flex list-disc flex-col gap-1 pl-5 marker:text-gold/70">
-            <li>You downloaded the file yourself from this website, not from a link someone sent you.</li>
-            <li>
-              The file is named <Ui>{apk.fileName}</Ui> and is about {apk.size}.
-            </li>
-            <li>The installer shows the app name as Paisa.</li>
-          </ul>
-          <p>If anything looks different, cancel and delete the file.</p>
-        </Note>
-        <Steps>
-          <Step>
-            If Play Protect offers to <Ui>Scan app</Ui> or send it for scanning, you can let it. It checks the
-            app and returns you to the installer.
-          </Step>
-          <Step>
-            If it shows a warning, tap <Ui>More details</Ui> (or the small arrow) to read it.
-          </Step>
-          <Step>
-            If you trust the file, tap <Ui>Install anyway</Ui>. Otherwise tap <Ui>Don’t install</Ui>.
-          </Step>
-        </Steps>
-        <p className="text-sm leading-relaxed text-text-dim">
-          Please don’t turn Play Protect off to install Paisa. It isn’t needed, and it keeps protecting the rest
-          of your phone. If Play Protect blocks the app outright with no option to continue, leave it blocked
-          {links.github ? (
-            <>
-              {" "}and let us know on{" "}
-              <a
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`text-lavender underline decoration-lavender/40 underline-offset-4 ${FOCUS}`}
-              >
-                GitHub
-              </a>
-            </>
-          ) : null}
-          .
-        </p>
-      </Section>
-
-      <Section number="05" title="Turn on automatic tracking">
-        <Note title="Why Paisa asks for Accessibility">
-          <p>
-            Paisa uses Android’s accessibility service to notice UPI payments as you make them, so you don’t have
-            to log each one by hand. It reads the on-screen text of <Ui>Google Pay, PhonePe and Paytm only</Ui>{" "}
-            to pick up the amount, payee and status.
-          </p>
-          <ul className="flex list-disc flex-col gap-1 pl-5 marker:text-lavender/70">
-            <li>It doesn’t read any other app, the UPI PIN screen or password fields.</li>
-            <li>What it reads stays on your phone.</li>
-            <li>
-              If you set a monthly budget, it can show a warning over the pay screen. Its only action is pressing
-              Back when you tap Cancel on that warning.
-            </li>
-          </ul>
-          <p>It’s optional. You can skip it and add expenses yourself, and turn it off at any time.</p>
-        </Note>
-        <Note tone="gold" title="Sensitive permission">
-          <p>
-            Accessibility access is powerful: an app with it can read what’s on your screen. Only grant it to apps
-            you trust. Grant it to the Paisa app you installed from this website, and to no other app that asks
-            for it, including anything that only looks like Paisa.
-          </p>
-        </Note>
-        <p className="text-[15px] leading-relaxed text-warm-white/85">
-          Because Paisa is installed from an APK rather than Google Play, Android blocks its Accessibility Service
-          until you allow “restricted settings”. Follow these steps in order:
-        </p>
-        <Steps>
-          <Step>
-            Open <Path>Settings → Apps → Paisa</Path>.
-          </Step>
-          <Step>
-            Tap the <Ui>⋮</Ui> three-dot menu in the top-right corner and select{" "}
-            <Ui>Allow restricted settings</Ui>. Authenticate with your PIN, pattern or fingerprint if prompted.
-          </Step>
-          <Step>
-            Return to Paisa and tap the option to enable its Accessibility Service.
-          </Step>
-          <Step>
-            Go to <Path>Settings → Accessibility → Installed apps</Path> (some phones call it{" "}
-            <Path>Downloaded apps</Path>; the label varies by device).
-          </Step>
-          <Step>
-            Select <Ui>{apk.serviceLabel}</Ui>, turn on <Ui>Use {apk.serviceLabel}</Ui>, and tap{" "}
-            <Ui>Allow</Ui> on the permission dialog.
-          </Step>
-        </Steps>
-        <Note title="Can’t find “Allow restricted settings”?">
-          <p>
-            On some devices the service must first be enabled, or attempted, from Paisa. That’s what triggers the
-            “Restricted setting” warning. Tap <Ui>OK</Ui> on it, then repeat steps 1 and 2: the option should now
-            appear in the ⋮ menu.
-          </p>
-          <p>
-            If the three-dot menu or the option is still missing, the exact path varies by Android version and
-            manufacturer. Use the list below, or search Settings for “Allow restricted settings” or “Accessibility”.
-            Android 12 and earlier don’t have this restriction, so you can skip to step 4.
-          </p>
-        </Note>
+      <Step number="4" title="Turn on auto-tracking" tag="Optional">
+        <Line>Lets Paisa log your UPI payments for you. Skip it and add expenses yourself.</Line>
+        <Box title="What it does">
+          <Checks
+            tone="mint"
+            items={[
+              "Only Google Pay, PhonePe & Paytm",
+              "Never your UPI PIN or passwords",
+              "Everything stays on your phone",
+              "Only taps Back if you cancel a budget warning",
+            ]}
+          />
+        </Box>
+        <div className="flex flex-col gap-2">
+          <p className="text-[13px] font-medium text-text-dim">A · Allow restricted settings</p>
+          <TapPath steps={["Settings", "Apps", "Paisa", "⋮", "Allow restricted settings"]} />
+        </div>
+        <div className="flex flex-col gap-2">
+          <p className="text-[13px] font-medium text-text-dim">B · Switch it on</p>
+          <TapPath steps={["Settings", "Accessibility", "Downloaded apps", apk.serviceLabel, "On"]} />
+        </div>
+        <Box tone="gold" title="Only for Paisa">
+          <p>This access can read your screen. Give it only to the Paisa you installed from this site.</p>
+        </Box>
+        <Paths summary="No “Allow restricted settings”?" rows={RESTRICTED_HELP} />
         <Paths summary="Can’t find it? Paths by phone brand" rows={ACCESSIBILITY_PATHS} />
-        <p className="text-sm leading-relaxed text-text-dim">
-          Once it’s on, open Paisa again. It shows when automatic tracking is active.
-        </p>
-      </Section>
-    </div>
+      </Step>
+    </ol>
   );
 }
 
@@ -363,7 +335,7 @@ export function InstallGuide({ open, onClose }: { open: boolean; onClose: () => 
               Android {apk.minAndroid}+ · {apk.size}
             </p>
             <h2 id={titleId} className="font-serif text-[32px] leading-[1.05] tracking-[-0.5px] sm:text-[38px]">
-              How to install <span className="italic text-lavender">&amp; set up</span>
+              Install <span className="italic text-lavender">in 4 steps</span>
             </h2>
           </div>
           <button
