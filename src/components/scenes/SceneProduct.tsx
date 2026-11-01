@@ -128,7 +128,7 @@ function ProductDesktop() {
           </Layer>
           <Layer progress={progress} enter={[0.5, 0.6]} fromX={-24}>
             <p className="max-w-[440px] text-[19px] leading-[1.6] text-text-dim">
-              An expense tracker designed to make everyday finances easier to understand.
+              A simple expense tracker for everyday money.
             </p>
           </Layer>
         </div>
@@ -213,7 +213,7 @@ function ProductMobile() {
         </Reveal>
         <Reveal delay={0.16}>
           <p className="text-sm leading-[1.55] text-text-dim">
-            An expense tracker designed to make everyday finances easier to understand.
+            A simple expense tracker for everyday money.
           </p>
         </Reveal>
         <Reveal delay={0.22}>

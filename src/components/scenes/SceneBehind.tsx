@@ -15,12 +15,10 @@ import { Stage } from "@/components/story/Stage";
 /*  Owner copy                                                                */
 /* -------------------------------------------------------------------------- */
 const PARAGRAPHS = [
-  "Paisa started with a simple problem: I couldn’t tell where my money went each month. Tracking expenses manually felt tedious, and I wanted a clearer picture of my spending without having to log every transaction myself.",
-  "From there, I designed the interface, built the backend, and experimented with AI-powered spending insights and Android-based UPI detection.",
-  "The hardest part was making automatic transaction tracking reliable while avoiding duplicate entries and keeping user data private. Paisa became a way for me to explore how thoughtful design, automation, and AI could make managing money simpler.",
+  "I couldn’t tell where my money went, and logging every expense by hand was tedious. So I designed and built Paisa to fix that.",
 ];
 
-const BUILD_STEPS = ["Problem", "Exploration", "Interface", "Backend", "AI insights", "UPI detection"] as const;
+const BUILD_STEPS = ["Problem", "Design", "Build", "AI insights", "Auto-tracking"] as const;
 
 /* -------------------------------------------------------------------------- */
 /*  Code snippet (illustrative)                                               */
@@ -300,51 +298,6 @@ function MobileScene() {
             <Narrative textClass="text-base leading-[1.65]" />
           </Reveal>
         </div>
-
-        <Reveal>
-          <div className="overflow-hidden rounded-[18px] border border-hairline-strong bg-void shadow-[0px_30px_70px_rgba(0,0,0,0.5)]">
-            <div className="flex h-10 items-center gap-2 border-b border-hairline px-4">
-              <span aria-hidden className="block size-2.5 rounded-full bg-coral" />
-              <span aria-hidden className="block size-2.5 rounded-full bg-gold" />
-              <span aria-hidden className="block size-2.5 rounded-full bg-mint" />
-              <span className="pl-3 font-mono text-xs text-text-dim">DuplicateCheck.kt</span>
-            </div>
-            <pre className="m-0 flex flex-col gap-1.5 p-4 font-mono text-[12px] leading-[17px]" aria-label="DuplicateCheck.kt, illustrative Kotlin snippet">
-              <span className="sr-only">{CODE_PLAIN_TEXT}</span>
-              {CODE_LINES.map((line, i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className={`block min-h-[17px] whitespace-pre-wrap break-words ${line.indent ? "pl-4" : ""}`}
-                >
-                  {line.tokens.map((token, j) => (
-                    <span key={j} className={TONE_CLASS[token.tone]}>
-                      {token.t}
-                    </span>
-                  ))}
-                </span>
-              ))}
-            </pre>
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <div className="flex flex-col items-start gap-3">
-            <span className="font-mono text-[11px] uppercase tracking-[1.5px] text-text-dim">
-              From the home screen
-            </span>
-            <ScreenCrop
-              screen="home"
-              scale={390}
-              x={16}
-              y={740}
-              width={240}
-              height={150}
-              radius={18}
-              className="border border-hairline-strong"
-            />
-          </div>
-        </Reveal>
 
         <Reveal>
           <ol aria-label="How Paisa was built" className="m-0 flex list-none flex-col p-0">

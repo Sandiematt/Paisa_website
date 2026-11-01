@@ -22,9 +22,12 @@ const CATS = [
   { name: "Transport", width: 124, bar: "bg-text-dim" },
 ];
 
-const AI_SUMMARY = "You spent ₹4,210 less than September. Dining rose 22% and now makes up about a third of spending.";
-const AI_SUGGESTION = "A weekly dining limit near ₹3,000 would keep you inside this month’s budget.";
-const AI_FOOTNOTE = "Written from statistics Paisa calculates. Suggestions, not financial advice.";
+const AI_STATS = [
+  { value: "–₹4,210", label: "vs September" },
+  { value: "+22%", label: "on dining" },
+] as const;
+const AI_SUGGESTION = "Try a ₹3,000 weekly dining limit.";
+const AI_FOOTNOTE = "Suggestions, not financial advice.";
 
 export function SceneInsights() {
   return (
@@ -122,7 +125,7 @@ function DesktopInsights() {
               className="font-sans text-[17px] leading-[1.6] text-text-dim"
               style={{ opacity: bodyOpacity, y: bodyY }}
             >
-              Understanding your habits is where things get interesting.
+              Paisa turns it into answers.
             </motion.p>
           </div>
 
@@ -238,7 +241,14 @@ function AiCardBody() {
           Sample data
         </span>
       </div>
-      <p className="font-sans text-[17px] leading-normal text-warm-white">{AI_SUMMARY}</p>
+      <div className="grid grid-cols-2 gap-2.5">
+        {AI_STATS.map((s) => (
+          <div key={s.label} className="flex flex-col gap-0.5 rounded-[14px] border border-hairline bg-void/50 px-3.5 py-3">
+            <span className="font-sans text-2xl font-bold tracking-[-0.5px] text-warm-white">{s.value}</span>
+            <span className="font-sans text-xs text-text-dim">{s.label}</span>
+          </div>
+        ))}
+      </div>
       <div className="flex items-start gap-2.5 rounded-[14px] bg-haze-faint p-3">
         <LightbulbIcon size={15} className="mt-0.5 text-lavender" />
         <p className="font-sans text-[13px] leading-normal text-warm-white">{AI_SUGGESTION}</p>
@@ -269,7 +279,7 @@ function MobileInsights(): ReactNode {
             Tracking is only <em>the beginning.</em>
           </h2>
           <p className="font-sans text-base leading-[1.6] text-text-dim">
-            Understanding your habits is where things get interesting.
+            Paisa turns it into answers.
           </p>
         </Reveal>
 

@@ -10,6 +10,8 @@ export const links = {
   terms: null as string | null,
   support: null as string | null,
   portfolio: "https://sandiematt.com" as string | null,
+  // Full auto-tracking (Accessibility) setup, per phone brand.
+  setup: "https://paisa-setup.sandiematt.com" as string | null,
 };
 
 /**
@@ -18,9 +20,9 @@ export const links = {
  */
 export const apk = {
   fileName: "Paisa.apk",
-  size: "84 MB",
+  size: "21 MB",
   minAndroid: "8.0",
-  version: "1.0",
+  version: "1.0.1 (beta)",
   /** Label Android shows for the accessibility service in Settings. */
   serviceLabel: "Paisa auto-tracking",
 };

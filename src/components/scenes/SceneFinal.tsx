@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, useReducedMotion, useTransform } from "motion/react";
 
+import { InstallGuide } from "@/components/install/InstallGuide";
 import { Grain, Particles } from "@/components/story/Atmosphere";
 import { PhoneFrame } from "@/components/story/PhoneFrame";
 import { Stage } from "@/components/story/Stage";
@@ -115,8 +116,6 @@ function Headline({ className, lineOne, lineTwo }: { className: string; lineOne?
   );
 }
 
-const SETUP_URL = "https://paisa-setup.sandiematt.com";
-
 const DOWNLOAD_NOTE = "Android download link appears here once it’s available.";
 
 const PRIMARY =
@@ -129,6 +128,7 @@ const OUTLINE =
  * then quiet GitHub / portfolio links. The guide itself lives in a modal.
  */
 function Actions({ size }: { size: "desktop" | "mobile" }) {
+  const [guideOpen, setGuideOpen] = useState(false);
   const desktop = size === "desktop";
   const base = desktop ? "h-14 px-7 gap-2.5" : "h-[52px] w-full gap-2";
   const outline = desktop ? "h-14 px-6 gap-2.5" : "h-[52px] w-full gap-2";
@@ -142,10 +142,15 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
               <DownloadIcon className="size-[18px]" />
               Download for Android
             </a>
-            <a href={SETUP_URL} {...EXTERNAL} className={`${OUTLINE} ${outline} ${FOCUS}`}>
-              How to install &amp; set up
+            <button
+              type="button"
+              onClick={() => setGuideOpen(true)}
+              aria-haspopup="dialog"
+              className={`${OUTLINE} ${outline} ${FOCUS}`}
+            >
+              Setup guide
               <ArrowRightIcon className="size-[18px]" />
-            </a>
+            </button>
           </>
         ) : (
           <a href="#product" className={`${PRIMARY} ${base} ${FOCUS}`}>
@@ -155,9 +160,13 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
         )}
       </div>
       {links.download ? (
-        <p className="w-fit text-sm text-text-dim">
-          APK for Android {apk.minAndroid} and later · {apk.size} · Not on the Play Store yet
-        </p>
+        <ul aria-label="About the download" className="flex flex-wrap gap-2">
+          {[`Beta ${apk.version.replace(" (beta)", "")}`, `Android ${apk.minAndroid}+`, apk.size].map((fact) => (
+            <li key={fact} className="rounded-full border border-hairline px-3 py-1 text-xs text-text-dim">
+              {fact}
+            </li>
+          ))}
+        </ul>
       ) : (
         <p className="w-fit text-sm text-text-dim">{DOWNLOAD_NOTE}</p>
       )}
@@ -165,7 +174,7 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
         {links.github && (
           <a href={links.github} {...EXTERNAL} className={quiet}>
             <GithubIcon className="size-3.5" />
-            <span className="underline decoration-hairline-strong underline-offset-4">View the project on GitHub</span>
+            <span className="underline decoration-hairline-strong underline-offset-4">GitHub</span>
           </a>
         )}
         {links.portfolio && (
@@ -176,6 +185,7 @@ function Actions({ size }: { size: "desktop" | "mobile" }) {
           </a>
         )}
       </div>
+      {links.download && <InstallGuide open={guideOpen} onClose={() => setGuideOpen(false)} />}
     </>
   );
 }

@@ -25,7 +25,7 @@ const callouts = [
   {
     key: "balance",
     title: "Available balance",
-    body: "What you actually have left, updated as money comes in and goes out.",
+    body: "What you really have left.",
     // vertical centre of the callout row, in stage coordinates
     centerY: 345,
     from: { x: 28, y: -16 },
@@ -33,14 +33,14 @@ const callouts = [
   {
     key: "budget",
     title: "Budget left this month",
-    body: "See how much of this month's budget is still available.",
+    body: "What's left to spend this month.",
     centerY: 483,
     from: { x: 28, y: 16 },
   },
   {
     key: "actions",
     title: "Income, expenses & history",
-    body: "Add an expense or income, or open your full history.",
+    body: "Add money in or out, or see your history.",
     centerY: 553,
     from: { x: 28, y: -16 },
   },
@@ -225,7 +225,7 @@ function KnowDesktop() {
           </Layer>
           <Layer progress={progress} enter={[0.05, 0.14]} fromX={-24}>
             <p className="text-lg leading-[1.6] text-text-dim">
-              Paisa brings your income, expenses and available balance into one clear picture.
+              Income, spending and balance. One clear view.
             </p>
           </Layer>
         </div>
@@ -296,7 +296,7 @@ function KnowMobile() {
         </Reveal>
         <Reveal delay={0.12}>
           <p className="text-base leading-[1.6] text-text-dim">
-            Paisa brings your income, expenses and available balance into one clear picture.
+            Income, spending and balance. One clear view.
           </p>
         </Reveal>
       </div>
