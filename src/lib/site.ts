@@ -22,7 +22,7 @@ export const apk = {
   fileName: "Paisa.apk",
   size: "21 MB",
   minAndroid: "8.0",
-  version: "1.0.1 (beta)",
+  version: "1.1 (beta)",
   /** Label Android shows for the accessibility service in Settings. */
   serviceLabel: "Paisa auto-tracking",
 };
